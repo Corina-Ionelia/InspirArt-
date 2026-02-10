@@ -8,18 +8,48 @@ hamburger.addEventListener('click', () => {
     mobile_menu.classList.toggle('active');
 });
 
-document.addEventListener('scroll',() =>{
+// Popup apare după 3 secunde
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.getElementById('newsletter-popup').classList.add('show');
+    }, 3000);
+});
+
+// Închidere popup la click pe X
+document.querySelector('#newsletter-popup .close-btn').addEventListener('click', () => {
+    document.getElementById('newsletter-popup').classList.remove('show');
+});
+
+// Închidere la click în afara popup-ului
+document.getElementById('newsletter-popup').addEventListener('click', (e) => {
+    if (e.target.id === 'newsletter-popup') {
+        document.getElementById('newsletter-popup').classList.remove('show');
+    }
+});
+
+// Submit form
+document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert("Mulțumim că te-ai abonat!");
+    document.getElementById('newsletter-popup').classList.remove('show');
+});
+
+
+
+
+
+document.addEventListener('scroll', () => {
     var scroll_position = window.scrollY;
-    if(scroll_position > 250){
+    if (scroll_position > 250) {
         header.style.backgroundColor = "#29323c";
-    }else{
+    } else {
         header.style.backgroundColor = "transparent";
     }
 });
 
-meniu_item.forEach(item=>{
-    item.addEventListener('click',()=>{
+meniu_item.forEach(item => {
+    item.addEventListener('click', () => {
         hamburger.classList.toggle('active');
-        mobile_menu.classList.toggle('active');  
+        mobile_menu.classList.toggle('active');
     })
 })
