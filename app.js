@@ -34,7 +34,14 @@ document.getElementById('newsletter-form').addEventListener('submit', (e) => {
     document.getElementById('newsletter-popup').classList.remove('show');
 });
 
+// Protecție imagini
+document.addEventListener('contextmenu', function(e) {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+});
 
+document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+});
 
 
 
