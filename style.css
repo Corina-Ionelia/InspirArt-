@@ -9,9 +9,9 @@
   --accent-hover: #fc64e5;
 
   /* “paper / cashmere” palette */
-  --nav-cream: rgba(226, 215, 198, 0.95);
-  --nav-cashmere: rgba(214, 196, 176, 0.62);
-  --nav-pink: rgba(255, 72, 218, 0.14);
+  --nav-cream: rgba(226, 215, 198, 0.64);
+  --nav-cashmere: rgba(214, 196, 176, 0.39);
+  --nav-pink: rgba(255, 72, 218, 0.15);
   --nav-border: rgba(0, 0, 0, 0.08);
   --nav-text: #111;
 }
@@ -323,47 +323,50 @@ body.menu-open {
 #header .hamburger::after {
   position: absolute;
   content: "";
-  height: 100%;
-  width: 100%;
+  inset: 0; /* în loc de height/width 100% */
   border-radius: 50%;
   border: 2px solid #111;
   animation: hamburger_puls 1s ease infinite;
+  pointer-events: none; /* IMPORTANT: să nu blocheze click-ul */
 }
 
+/* cele 3 linii din hamburger */
 #header .hamburger .bar {
   height: 2px;
   width: 28px;
   position: relative;
   background-color: #111;
-  z-index: -1;
+  z-index: 1; /* IMPORTANT: nu -1 */
 }
 
-#header .hamburger .bar::after,
-#header .hamburger .bar::before {
+#header .hamburger .bar::before,
+#header .hamburger .bar::after {
   content: "";
   position: absolute;
+  left: 0;
   height: 100%;
   width: 100%;
-  left: 0;
   background-color: #111;
-  transition: 0.3s;
-  transition-property: top, bottom;
+  transition: 0.3s ease;
+  transition-property: transform, top, bottom;
 }
 
-#header .hamburger .bar:after {
+#header .hamburger .bar::after {
   top: 8px;
 }
-#header .hamburger .bar:before {
+
+#header .hamburger .bar::before {
   bottom: 8px;
 }
 
+/* când e activ: se strâng liniile sus/jos în centru */
 #header .hamburger.active .bar::before {
   bottom: 0;
 }
+
 #header .hamburger.active .bar::after {
   top: 0;
 }
-
 /* =========================
    HERO (vechi) - păstrat
    ========================= */
