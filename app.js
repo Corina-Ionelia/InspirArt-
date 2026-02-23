@@ -1,65 +1,74 @@
-const hamburger = document.querySelector('#header .hamburger');
-const mobile_menu = document.querySelector('#header .nav-list ul');
+// ===== Menu (Hamburger) =====
+const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+const mobileMenu = document.querySelector('.header .nav-bar .nav-list ul');
+const menuLinks = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
 
-const meniu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
-const header = document.querySelector('.header.container');
+function openMenu() {
+    hamburger.classList.add('active');
+    mobileMenu.classList.add('active');
+    document.body.classList.add('menu-open');
+}
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    mobile_menu.classList.toggle('active');
+function closeMenu() {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    document.body.classList.remove('menu-open');
+}
 
-    document.body.classList.toggle('menu-open'); // <-- asta e cheia
-});
+function toggleMenu() {
+    const isOpen = mobileMenu.classList.contains('active');
+    if (isOpen) closeMenu();
+    else openMenu();
+}
 
-// Popup apare după 3 secunde
+if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', toggleMenu);
+
+    // click pe link => închide
+    menuLinks.forEach(a => a.addEventListener('click', closeMenu));
+
+    // ESC => închide
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+    });
+
+    // click în afară => închide (doar când e deschis)
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.classList.contains('active')) return;
+        const clickedInside = mobileMenu.contains(e.target) || hamburger.contains(e.target);
+        if (!clickedInside) closeMenu();
+    });
+}
+
+// ===== Newsletter popup (doar dacă există pe pagină) =====
 window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        document.getElementById('newsletter-popup').classList.add('show');
-    }, 3000);
-});
+    const popup = document.getElementById('newsletter-popup');
+    if (!popup) return;
 
-// Închidere popup la click pe X
-document.querySelector('#newsletter-popup .close-btn').addEventListener('click', () => {
-    document.getElementById('newsletter-popup').classList.remove('show');
-});
+    setTimeout(() => popup.classList.add('show'), 3000);
 
-// Închidere la click în afara popup-ului
-document.getElementById('newsletter-popup').addEventListener('click', (e) => {
-    if (e.target.id === 'newsletter-popup') {
-        document.getElementById('newsletter-popup').classList.remove('show');
+    const closeBtn = popup.querySelector('.close-btn');
+    if (closeBtn) closeBtn.addEventListener('click', () => popup.classList.remove('show'));
+
+    popup.addEventListener('click', (e) => {
+        if (e.target.id === 'newsletter-popup') popup.classList.remove('show');
+    });
+
+    const form = document.getElementById('newsletter-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Mulțumim că te-ai abonat!");
+            popup.classList.remove('show');
+        });
     }
 });
 
-// Submit form
-document.getElementById('newsletter-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert("Mulțumim că te-ai abonat!");
-    document.getElementById('newsletter-popup').classList.remove('show');
-});
-
-// Protecție imagini
-document.addEventListener('contextmenu', function(e) {
+// ===== Protecție imagini =====
+document.addEventListener('contextmenu', (e) => {
     if (e.target.tagName === 'IMG') e.preventDefault();
 });
 
-document.addEventListener('dragstart', function(e) {
+document.addEventListener('dragstart', (e) => {
     if (e.target.tagName === 'IMG') e.preventDefault();
 });
-
-
-
-document.addEventListener('scroll', () => {
-    var scroll_position = window.scrollY;
-    if (scroll_position > 250) {
-        header.style.backgroundColor = "#29323c";
-    } else {
-        header.style.backgroundColor = "transparent";
-    }
-});
-
-meniu_item.forEach(item => {
-    item.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        mobile_menu.classList.toggle('active');
-    })
-})

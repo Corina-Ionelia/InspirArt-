@@ -2,25 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Workshops | InspirA+</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="imagini/cropped-fav.png">
+    <link rel="icon" type="image/png" href="imagini/cropped-fav.png" />
 </head>
 
 <body>
-
     <section id="header">
         <div class="header container">
             <div class="nav-bar">
                 <div class="brand">
-                    <a href="index.html">
-                        <img src="imagini/logo.svg" class="logo">
-                    </a>
+                    <a href="index.html"><img src="imagini/logo.svg" alt="InspirArt Logo" class="logo" /></a>
                 </div>
                 <div class="nav-list">
-                    <div class="hamburger">
+                    <div class="hamburger" aria-label="Open Menu" role="button" tabindex="0">
                         <div class="bar"></div>
                     </div>
                     <ul>
@@ -35,86 +32,67 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="about container">
-            <div class="col-left">
-                <div class="about-img">
-                    <img src="./imagini/Dreamy_Cloud.jpg" alt="img">
-                </div>
-            </div>
-            <div class="col-right">
-                <h1 class="section-title">Work <span>Shops</span></h1>
-                <h2>Front End Developer</h2>
-                <p>Tabloul canvas este un print pe panza, care nu trebuie confundata cu pictura pe panza si care
-                    reprezinta o imagine digitala printata de o imprimanta performanta cu jet de cerneala pe panza.</p>
-                <a href="#" class="cta">Download Resume</a>
+    <main class="page">
+        <div class="page-inner">
+            <h1 class="page-title">Creative <span>Workshops</span></h1>
+            <p class="page-subtitle">Wine &amp; paint, school programs, kids &amp; parents sessions.</p>
+
+            <div class="grid">
+                <article class="card">
+                    <div class="card-media"></div>
+                    <div class="card-body">
+                        <span class="badge">Adults</span>
+                        <h3>Wine &amp; Paint</h3>
+                        <p>Relaxed sessions, no experience needed.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media"></div>
+                    <div class="card-body">
+                        <span class="badge">Schools</span>
+                        <h3>Art in Schools</h3>
+                        <p>Creative activities for classes and groups.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media"></div>
+                    <div class="card-body">
+                        <span class="badge">Family</span>
+                        <h3>Kids &amp; Parents</h3>
+                        <p>Bonding through art and playful exploration.</p>
+                    </div>
+                </article>
             </div>
         </div>
-    </section>
-    <!-- End About Section -->
-    <!-- Footer -->
+    </main>
+
     <section id="footer">
         <div class="footer container">
             <div class="brand">
                 <h1><span>X</span>enia <span>B</span>otea</h1>
             </div>
-
-            <!-- Contact -->
-            <!-- Social icons -->
             <div class="social-icons">
-                <a href="https://www.facebook.com/inspiraplus.ro/" class="social-item" target="_blank">
-                    <img src="https://img.icons8.com/fluency/48/facebook-new.png" alt="Facebook">
-                </a>
-                <a href="https://www.instagram.com/inspiraplus.ro/" class="social-item" target="_blank">
-                    <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram">
-                </a>
-                <a href="https://www.tiktok.com/@inspiraplus.ro/" class="social-item" target="_blank">
-                    <img src="https://img.icons8.com/color/48/tiktok--v1.png" alt="TikTok">
-                </a>
-                <a href="https://wa.me/40758312756" class="social-item" target="_blank">
-                    <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp">
-                </a>
-                <a href="https://www.google.com/maps/search/?api=1&query=Strada+Universitatii+3+Galati"
-                    class="social-item" target="_blank">
-                    <img src="https://img.icons8.com/fluency/48/000000/google-maps-new.png" alt="Google Maps">
-                </a>
-
-
+                <a href="https://www.facebook.com/inspiraplus.ro/" target="_blank" rel="noopener"><img
+                        src="https://img.icons8.com/fluency/48/facebook-new.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/inspiraplus.ro/" target="_blank" rel="noopener"><img
+                        src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@inspiraplus.ro" target="_blank" rel="noopener"><img
+                        src="https://img.icons8.com/color/48/tiktok--v1.png" alt="TikTok"></a>
+                <a href="https://wa.me/40758312756" target="_blank" rel="noopener"><img
+                        src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp"></a>
             </div>
-            <p class="copyright">© 2026 | All rights reserved InspirA+</p>
-            <div style="text-align: center; margin-top: 15px;">
-                <a href="termeni.html"
-                    style="color: #eb00ff; text-decoration: none; font-size: 12px; margin: 0 10px; text-transform: uppercase;">Terms
-                    & Conditions</a>
-                <span style="color: #444;">|</span>
-                <a href="privacy.html"
-                    style="color: #eb00ff; text-decoration: none; font-size: 12px; margin: 0 10px; text-transform: uppercase;">Privacy
-                    Policy</a>
-            </div>
+            <p>© 2026 | All rights reserved InspirA+</p>
+            <div class="legal"><a href="termeni.html">Terms &amp; Conditions</a><span>|</span><a
+                    href="privacy.html">Privacy Policy</a></div>
         </div>
     </section>
-    <!-- End Footer -->
-    <script>
-        // Blochează click dreapta pe imagini
-        document.addEventListener('contextmenu', function (e) {
-            if (e.target.tagName === 'IMG') {
-                e.preventDefault();
-            }
-        }, false);
 
-        // Blochează drag and drop (să nu poată trage imaginea pe desktop)
-        document.addEventListener('dragstart', function (e) {
-            if (e.target.tagName === 'IMG') {
-                e.preventDefault();
-            }
-        }, false);
-    </script>
     <script src="./app.js"></script>
-    <!-- Buton WhatsApp fix dreapta jos -->
-    <a href="https://wa.me/40758312756" target="_blank" class="whatsapp-float">
-        <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp">
+    <a href="https://wa.me/40758312756" target="_blank" rel="noopener" class="whatsapp-float">
+        <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" />
     </a>
-
+</body>
 
 </html>
