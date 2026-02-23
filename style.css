@@ -1,22 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap");
+
+/* =========================
+   VARIABLES
+   ========================= */
 :root {
   --accent-color: #ff48da;
   --accent-hover: #fc64e5;
+
+  /* “paper / cashmere” palette */
+  --nav-cream: rgba(226, 215, 198, 0.95);
+  --nav-cashmere: rgba(214, 196, 176, 0.62);
+  --nav-pink: rgba(255, 72, 218, 0.14);
+  --nav-border: rgba(0, 0, 0, 0.08);
+  --nav-text: #111;
 }
 
+/* =========================
+   BASE
+   ========================= */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 html {
   font-size: 10px;
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 }
+
 a {
   text-decoration: none;
 }
+
 .container {
   min-height: 100vh;
   width: 100%;
@@ -24,40 +42,44 @@ a {
   align-items: center;
   justify-content: center;
 }
+
+/* imagine global */
 img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
-img {
-  -webkit-touch-callout: none; /* Blochează meniul contextual pe mobil (iOS/Android) */
-  -webkit-user-select: none; /* Blochează selecția pe Safari */
-  user-select: none; /* Blochează selecția pe browsere moderne */
-}
+
 p {
-  color: black;
+  color: #0f0f0f;
   font-size: 1.4rem;
   margin-top: 5px;
   line-height: 2.5rem;
   font-weight: 300;
   letter-spacing: 0.05rem;
 }
+
 .section-title {
   font-size: 4rem;
   font-weight: 300;
-  color: black;
+  color: #0f0f0f;
   margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   text-align: center;
 }
+
 .section-title span {
   color: var(--accent-color);
 }
+
 .cta {
   display: inline-block;
   padding: 10px 30px;
-  color: white;
+  color: #111;
   background-color: transparent;
   border: 2px solid var(--accent-color);
   font-size: 2rem;
@@ -67,15 +89,18 @@ p {
   transition: 0.3s ease;
   transition-property: background-color, color;
 }
+
 .cta:hover {
   color: white;
   background-color: var(--accent-color);
 }
+
 .brand h1 {
   font-size: 3rem;
   text-transform: uppercase;
   color: white;
 }
+
 .brand h1 span {
   color: var(--accent-color);
 }
@@ -85,20 +110,89 @@ p {
   width: auto;
 }
 
-/* Header section */
+/* Ca să nu fie acoperit conținutul de header-ul fixed */
+body {
+  padding-top: 8vh;
+}
+
+/* blochează scroll-ul când meniul e deschis */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* =========================
+   HEADER (mereu vizibil + "brush on paper")
+   ========================= */
 #header {
   position: fixed;
-  z-index: 1000;
+  z-index: 9999;
   left: 0;
   top: 0;
   width: 100vw;
   height: auto;
 }
+
+/* bara crem/casmir cu efect artistic */
 #header .header {
   min-height: 8vh;
-  background-color: rgba(31, 30, 30, 0.24);
-  transition: 0.3s ease background-color;
+
+  /* “brush / paper” layered background */
+  background: radial-gradient(
+      1100px 240px at 12% 15%,
+      rgba(255, 72, 218, 0.1) 0%,
+      rgba(255, 72, 218, 0) 62%
+    ),
+    radial-gradient(
+      980px 260px at 85% 8%,
+      rgba(226, 215, 198, 0.82) 0%,
+      rgba(226, 215, 198, 0) 64%
+    ),
+    radial-gradient(
+      820px 300px at 50% 140%,
+      rgba(214, 196, 176, 0.62) 0%,
+      rgba(214, 196, 176, 0) 62%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(252, 246, 238, 0.96) 0%,
+      rgba(255, 255, 255, 0.9) 45%,
+      rgba(248, 236, 243, 0.78) 100%
+    );
+
+  border-bottom: 1px solid var(--nav-border);
+
+  transition:
+    0.3s ease background,
+    0.3s ease box-shadow;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+
+  position: relative;
+  overflow: hidden;
 }
+
+/* micro “paper fiber” */
+#header .header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    115deg,
+    rgba(0, 0, 0, 0.018) 0px,
+    rgba(0, 0, 0, 0.018) 1px,
+    rgba(255, 255, 255, 0) 6px,
+    rgba(255, 255, 255, 0) 10px
+  );
+
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+}
+
 #header .nav-bar {
   display: flex;
   align-items: center;
@@ -106,87 +200,144 @@ p {
   width: 100%;
   height: 100%;
   max-width: 1300px;
-  padding: 0 10px;
+  padding: 10px 10px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; /* peste textura ::before */
 }
+
+/* ===== MOBILE MENU (slide) ===== */
 #header .nav-list ul {
   list-style: none;
-  position: absolute;
-  background-color: rgb(31, 30, 30);
+
+  /* IMPORTANT */
+  position: fixed;
+  inset: 0; /* top/right/bottom/left: 0 */
+  left: 100%; /* pornește din dreapta */
+
   width: 100vw;
   height: 100vh;
-  left: 100%;
-  top: 0;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1;
-  overflow-x: hidden;
-  transition: 0.5s ease left;
+
+  overflow: hidden; /* nu doar x */
+  transition: left 0.5s ease;
+
+  /* opac ca să nu se vadă hero în spate */
+  background: radial-gradient(
+      900px 280px at 20% 10%,
+      rgba(255, 72, 218, 0.1) 0%,
+      rgba(255, 72, 218, 0) 62%
+    ),
+    radial-gradient(
+      980px 320px at 75% 20%,
+      rgba(226, 215, 198, 0.8) 0%,
+      rgba(226, 215, 198, 0) 65%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(252, 246, 238, 0.98) 0%,
+      rgba(255, 255, 255, 0.98) 55%,
+      rgba(248, 236, 243, 0.9) 100%
+    );
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  z-index: 9998;
 }
+
 #header .nav-list ul.active {
   left: 0;
 }
+
+/* hamburger peste meniu */
+#header .hamburger {
+  position: relative;
+  z-index: 9999;
+}
+
+#header .nav-list ul.active {
+  left: 0;
+}
+
+/* linkuri meniu */
 #header .nav-list ul a {
   font-size: 2.5rem;
   font-weight: 500;
   letter-spacing: 0.2rem;
   text-decoration: none;
-  color: white;
+  color: #111;
   text-transform: uppercase;
   padding: 20px;
   display: block;
+  position: relative;
 }
+
 #header .nav-list ul a::after {
   content: attr(data-after);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  color: rgba(240, 248, 255, 0.021);
+  color: rgba(0, 0, 0, 0.03);
   font-size: 13rem;
   letter-spacing: 50px;
   z-index: -1;
   transition: 0.3s ease letter-spacing;
 }
+
 #header .nav-list ul li:hover a::after {
   transform: translate(-50%, -50%) scale(1);
   letter-spacing: initial;
 }
+
 #header .nav-list ul li:hover a {
   color: var(--accent-color);
 }
+
+/* ===== HAMBURGER ===== */
 #header .hamburger {
-  height: 60px;
-  width: 60px;
-  display: inline-block;
-  border: 3px solid white;
+  height: 56px;
+  width: 56px;
+  border: 2px solid #111;
   border-radius: 50%;
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+
   cursor: pointer;
-  transform: scale(0.8);
-  margin-right: 20px;
+  transform: scale(0.9);
+  margin-right: 10px;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  z-index: 9999; /* peste meniul mobil */
 }
+
 #header .hamburger::after {
   position: absolute;
   content: "";
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 2px solid #111;
   animation: hamburger_puls 1s ease infinite;
 }
+
 #header .hamburger .bar {
   height: 2px;
-  width: 30px;
+  width: 28px;
   position: relative;
-  background-color: white;
+  background-color: #111;
   z-index: -1;
 }
+
 #header .hamburger .bar::after,
 #header .hamburger .bar::before {
   content: "";
@@ -194,16 +345,18 @@ p {
   height: 100%;
   width: 100%;
   left: 0;
-  background-color: white;
+  background-color: #111;
   transition: 0.3s;
   transition-property: top, bottom;
 }
+
 #header .hamburger .bar:after {
   top: 8px;
 }
 #header .hamburger .bar:before {
   bottom: 8px;
 }
+
 #header .hamburger.active .bar::before {
   bottom: 0;
 }
@@ -211,9 +364,9 @@ p {
   top: 0;
 }
 
-/* End Header section */
-
-/* Hero section */
+/* =========================
+   HERO (vechi) - păstrat
+   ========================= */
 #hero {
   background-image: url(./imagini/vg1703_photorealistic_field_of_colorful_tulips_golden_hour_oil__27344a96-65aa-4b5b-a23d-d03b2aed541a.png);
   background-size: cover;
@@ -221,6 +374,7 @@ p {
   position: relative;
   z-index: 1;
 }
+
 #hero::after {
   content: "";
   position: absolute;
@@ -232,12 +386,14 @@ p {
   opacity: 0.7;
   z-index: -1;
 }
+
 #hero .hero {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 50px;
   justify-content: flex-start;
 }
+
 #hero h1 {
   display: block;
   width: fit-content;
@@ -247,6 +403,7 @@ p {
   animation: text_reveal 0.5s ease forwards;
   animation-delay: 1s;
 }
+
 #hero h1:nth-child(1) {
   animation-delay: 1s;
 }
@@ -257,6 +414,7 @@ p {
   animation: text_reveal_name 0.5s ease forwards;
   animation-delay: 3s;
 }
+
 #hero h1 span {
   position: absolute;
   top: 0;
@@ -267,6 +425,7 @@ p {
   animation: text_reveal_box 1s ease;
   animation-delay: 0.5s;
 }
+
 #hero h1:nth-child(1) span {
   animation-delay: 0.5s;
 }
@@ -277,8 +436,189 @@ p {
   animation-delay: 2.5s;
 }
 
-/* End of hero section */
-/* Newsletter Popup WOW */
+/* ==========================================
+   HERO V2 (index.html) - 3 imagini + text artistic
+   IMPORTANT: pune pe index <section id="hero" class="hero-clean">
+   ========================================== */
+#hero.hero-clean {
+  background-image: none !important;
+  background: #fff !important;
+}
+#hero.hero-clean::after {
+  display: none !important;
+}
+
+#hero .hero.hero-v2.container {
+  min-height: auto !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 60px 20px 80px !important;
+}
+
+/* 3 imagini: rămân 3 și pe mobil/tabletă */
+#hero .hero-v2 .hero-top {
+  width: min(1150px, 100%);
+  display: grid;
+  grid-template-columns: 1fr 2.2fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+  margin: 0 auto 34px;
+}
+
+#hero .hero-v2 .hero-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+  border-radius: 2px;
+}
+
+#hero .hero-v2 .hero-img--center {
+  height: 460px;
+}
+
+#hero .hero-v2 .hero-img--left {
+  object-position: center 35%;
+}
+#hero .hero-v2 .hero-img--right {
+  object-position: center 60%;
+}
+
+#hero .hero-v2 .hero-inner {
+  width: min(980px, 100%);
+  text-align: center;
+}
+
+/* Titlul principal (numele) – negru, elegant */
+#hero .hero-v2 .hero-name {
+  animation: none !important;
+  color: #0f0f0f !important;
+  position: static !important;
+  width: auto !important;
+  font-size: clamp(2.2rem, 4vw, 3.4rem) !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.16em !important;
+  margin: 0 !important;
+}
+
+/* scoatem box reveal */
+#hero .hero-v2 .hero-name span {
+  animation: none !important;
+  position: static !important;
+  background: none !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* WELCOME – mai mare + artistic */
+#hero .hero-v2 .hero-subtitle {
+  margin: 16px 0 18px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #0f0f0f;
+  font-weight: 400;
+}
+
+/* accent roz fin sub subtitle */
+#hero .hero-v2 .hero-subtitle::after {
+  content: "";
+  display: block;
+  width: 170px;
+  height: 2px;
+  margin: 14px auto 0;
+  background: var(--accent-color);
+  border-radius: 999px;
+  opacity: 0.95;
+}
+
+/* linie decorativă (subțire) */
+#hero .hero-v2 .hero-wave {
+  width: 520px;
+  max-width: 92%;
+  height: 1px;
+  margin: 22px auto 44px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 0, 0, 0.22),
+    transparent
+  );
+}
+
+/* 2 coloane text */
+#hero .hero-v2 .hero-about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 58px;
+  text-align: left;
+}
+
+/* text mai vizibil (negru) + aerisit */
+#hero .hero-v2 .hero-col p {
+  margin: 0 0 18px;
+  font-size: 1.5rem;
+  line-height: 2.8rem;
+  color: #0f0f0f;
+  font-weight: 400;
+  opacity: 0.92;
+}
+
+/* semnătură */
+#hero .hero-v2 .hero-sign {
+  margin-top: 44px;
+  text-align: right;
+  font-style: italic;
+  color: #0f0f0f;
+  opacity: 0.9;
+}
+
+/* accent roz dacă folosești <span class="pink"> */
+#hero .hero-v2 .pink {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Responsive: Păstrăm 3 imagini și pe mobil/tabletă */
+@media (max-width: 900px) {
+  #hero .hero-v2 .hero-top {
+    grid-template-columns: 1fr 1.6fr 1fr;
+    gap: 10px;
+  }
+  #hero .hero-v2 .hero-img {
+    height: 220px;
+  }
+  #hero .hero-v2 .hero-img--center {
+    height: 240px;
+  }
+  #hero .hero-v2 .hero-about {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  #hero .hero-v2 .hero-sign {
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  #hero .hero-v2 .hero-top {
+    grid-template-columns: 1fr 1.4fr 1fr;
+    gap: 8px;
+  }
+  #hero .hero-v2 .hero-img {
+    height: 190px;
+  }
+  #hero .hero-v2 .hero-img--center {
+    height: 210px;
+  }
+}
+
+/* =========================
+   Newsletter Popup WOW (păstrat)
+   ========================= */
 #newsletter-popup {
   position: fixed;
   bottom: -100%;
@@ -300,7 +640,6 @@ p {
   opacity: 1;
 }
 
-/* Popup content */
 #newsletter-popup .popup-content {
   padding: 30px 25px;
   text-align: center;
@@ -332,7 +671,6 @@ p {
   color: #555;
 }
 
-/* Form */
 #newsletter-popup input[type="email"] {
   width: 80%;
   padding: 12px 15px;
@@ -347,7 +685,6 @@ p {
   border-color: #fc64e5;
 }
 
-/* Subscribe button */
 #newsletter-popup button {
   padding: 12px 30px;
   border: none;
@@ -359,11 +696,11 @@ p {
   transition: all 0.3s ease;
   animation: pulse 2s infinite;
 }
+
 #newsletter-popup button:hover {
   background: #fc64e5;
 }
 
-/* Pulsing animation */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -376,7 +713,6 @@ p {
   }
 }
 
-/* Social icons inside popup */
 #newsletter-popup .social-icons {
   display: flex;
   justify-content: center;
@@ -404,13 +740,14 @@ p {
   filter: drop-shadow(0 4px 10px #fc64e5);
 }
 
-/* TikTok special hover effect */
 #newsletter-popup .social-icons a:last-child:hover {
   transform: rotate(-15deg) scale(1.25);
   filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
 }
 
-/* Services section */
+/* =========================
+   Services (păstrat + fix mic)
+   ========================= */
 #services .services {
   flex-direction: column;
   text-align: center;
@@ -418,13 +755,15 @@ p {
   margin: 0 auto;
   padding: 100px 0;
 }
+
 #services .service-top p {
-  max-width: 800px; /* Previne textul să se întindă pe tot ecranul */
-  margin: 0 auto 20px; /* Centrează blocul de text */
+  max-width: 800px;
+  margin: 0 auto 20px;
   font-size: 2rem;
   line-height: 2.1;
-  color: #000000; negrul 
+  color: #000000;
 }
+
 .highlight-text {
   font-size: 3.2rem !important;
   font-weight: 500;
@@ -433,9 +772,10 @@ p {
 }
 
 .social-prompt span {
-  color: #eb00ff; /* Accent roz pe cuvântul WhatsApp */
+  color: #eb00ff;
   font-weight: bold;
 }
+
 #services .service-bottom {
   display: flex;
   align-items: center;
@@ -443,6 +783,7 @@ p {
   flex-wrap: wrap;
   margin-top: 50px;
 }
+
 #services .service-item {
   flex-basis: 80%;
   display: flex;
@@ -458,6 +799,7 @@ p {
   z-index: 1;
   overflow: hidden;
 }
+
 #services .service-item::after {
   content: "";
   position: absolute;
@@ -469,40 +811,46 @@ p {
   opacity: 0.9;
   z-index: -1;
 }
+
 #services .service-bottom .icon {
   height: 50px;
   width: 50px;
   margin-bottom: 20px;
 }
+
 #services .service-item h2 {
   font-size: 2rem;
   color: white;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
+
 #services .service-item p {
   color: white;
   text-align: left;
 }
 
-/* End Services section */
-
-/* Project section */
+/* =========================
+   Projects (păstrat)
+   ========================= */
 #projects .projects {
   flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
   padding: 100px 0;
 }
+
 #projects .projects-header h1 {
   margin-bottom: 50px;
 }
+
 #projects .all-projects {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
+
 #projects .projects-item {
   display: flex;
   align-items: center;
@@ -513,6 +861,7 @@ p {
   overflow: hidden;
   border-radius: 10px;
 }
+
 #projects .projects-info {
   padding: 30px;
   flex-basis: 50%;
@@ -525,6 +874,7 @@ p {
   background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
   color: white;
 }
+
 #projects .projects-info h1 {
   font-size: 4rem;
   font-weight: 500;
@@ -537,12 +887,14 @@ p {
 #projects .projects-info p {
   color: white;
 }
+
 #projects .project-img {
   flex-basis: 50%;
   height: 300px;
   overflow: hidden;
   position: relative;
 }
+
 #projects .project-img::after {
   content: "";
   position: absolute;
@@ -551,15 +903,17 @@ p {
   height: 100%;
   width: 100%;
 }
+
 #projects .project-img img {
   transition: 0.3s ease transform;
 }
 #projects .projects-item:hover .project-img img {
   transform: scale(1.1);
 }
-/* End Project section */
 
-/* About section */
+/* =========================
+   About (păstrat)
+   ========================= */
 #about .about {
   flex-direction: column-reverse;
   text-align: center;
@@ -567,6 +921,7 @@ p {
   margin: 0 auto;
   padding: 100px 20px;
 }
+
 #about .col-left {
   width: 250px;
   height: 360px;
@@ -574,27 +929,32 @@ p {
 #about .col-right {
   width: 100%;
 }
+
 #about .col-right h2 {
   font-size: 1.8rem;
   font-weight: 500;
   letter-spacing: 0.2rem;
   margin-bottom: 10px;
 }
+
 #about .col-right p {
   margin-bottom: 20px;
 }
+
 #about .col-right .cta {
   color: black;
   margin-bottom: 50px;
   padding: 10px 20px;
   font-size: 2rem;
 }
+
 #about .col-left .about-img {
   height: 100%;
   width: 100%;
   position: relative;
   border: 10px solid white;
 }
+
 #about .col-left .about-img::after {
   content: "";
   position: absolute;
@@ -605,51 +965,54 @@ p {
   border: 7px solid var(--accent-color);
   z-index: -1;
 }
-/* End About section */
 
-/* Contact section */
-/* Buton WhatsApp fix */
+/* =========================
+   WhatsApp (păstrat)
+   ========================= */
 .whatsapp-float {
-    position: fixed;
-    bottom: 20px;       /* distanță de jos */
-    right: 20px;        /* distanță de dreapta */
-    z-index: 1000;      /* să fie peste tot */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;        /* dimensiune buton desktop */
-    height: 60px;
-    background-color: #25d366;  /* verde WhatsApp */
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .whatsapp-float img {
-    width: 28px;        /* iconul WhatsApp */
-    height: 28px;
+  width: 28px;
+  height: 28px;
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.1);          /* mic efect zoom */
-    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* Responsive pentru mobil */
 @media (max-width: 600px) {
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 15px;
-        right: 15px;
-    }
-    .whatsapp-float img {
-        width: 24px;
-        height: 24px;
-    }
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+  .whatsapp-float img {
+    width: 24px;
+    height: 24px;
+  }
 }
 
-/* Contact Section */
+/* =========================
+   Contact (păstrat)
+   ========================= */
 #contact {
   background-color: #f9f9f9;
   padding: 100px 20px;
@@ -704,7 +1067,6 @@ p {
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* Icon style */
 #contact .contact-item .icon {
   flex-shrink: 0;
   width: 70px;
@@ -717,7 +1079,6 @@ p {
   cursor: pointer;
 }
 
-/* Animated puls like footer */
 #contact .contact-item .icon::after {
   content: "";
   position: absolute;
@@ -748,7 +1109,6 @@ p {
   transform: scale(1.2) rotate(10deg);
 }
 
-/* Contact info text */
 #contact .contact-item .contact-info h1 {
   font-size: 1.8rem;
   color: #111;
@@ -773,7 +1133,6 @@ p {
   text-decoration: underline;
 }
 
-/* Puls keyframe */
 @keyframes puls {
   0% {
     transform: scale(1);
@@ -789,7 +1148,6 @@ p {
   }
 }
 
-/* Responsive for tablet */
 @media (min-width: 768px) {
   #contact .contact-items {
     flex-direction: row;
@@ -809,34 +1167,29 @@ p {
   }
 }
 
-/* Responsive for mobile */
 @media (max-width: 480px) {
   #contact .section-title {
     font-size: 3rem;
   }
-
   #contact .contact-item {
     width: 95%;
     padding: 20px;
   }
-
   #contact .contact-item .icon {
     width: 60px;
     height: 60px;
   }
-
   #contact .contact-item .contact-info h1 {
     font-size: 1.6rem;
   }
-
   #contact .contact-item .contact-info h2 {
     font-size: 1.2rem;
   }
 }
 
-/* End Contact section */
-
-/* Footer */
+/* =========================
+   Footer (păstrat)
+   ========================= */
 #footer {
   background-color: #111;
   color: #fff;
@@ -862,7 +1215,6 @@ p {
   color: #aaa;
 }
 
-/* Contact info */
 #footer .contact p {
   margin: 5px 0;
   font-size: 0.95rem;
@@ -877,7 +1229,6 @@ p {
   text-decoration: underline;
 }
 
-/* Social icons */
 #footer .social-icons {
   display: flex;
   justify-content: center;
@@ -899,30 +1250,30 @@ p {
   font-size: 0.9rem;
   color: #888;
 }
+
 #footer .footer.container {
-  min-height: auto; /* nu ocupa tot ecranul */
+  min-height: auto;
   display: flex;
-  flex-direction: column; /* stivuire verticală */
-  align-items: center; /* centru orizontal */
-  justify-content: center; /* centru vertical doar în interior, nu pe tot ecranul */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 50px 20px;
 }
-/* Responsive */
+
 @media (max-width: 480px) {
   #footer .brand h1 {
     font-size: 1.5rem;
   }
-
   #footer .social-item img {
     width: 35px;
     height: 35px;
   }
 }
 
-/* End Footer */
-
-/* Keyframes */
+/* =========================
+   Keyframes (păstrat)
+   ========================= */
 @keyframes hamburger_puls {
   0% {
     opacity: 1;
@@ -933,6 +1284,7 @@ p {
     transform: scale(1.5);
   }
 }
+
 @keyframes text_reveal_box {
   50% {
     width: 100%;
@@ -943,20 +1295,23 @@ p {
     left: 100%;
   }
 }
+
 @keyframes text_reveal {
   100% {
     color: white;
   }
 }
+
 @keyframes text_reveal_name {
   100% {
     color: var(--accent-color);
     font-weight: 500;
   }
 }
-/* End Keyframes */
 
-/* Media Query For Tablet */
+/* =========================
+   Media Query For Tablet (păstrat + fix mic)
+   ========================= */
 @media only screen and (min-width: 768px) {
   .cta {
     font-size: 2.5rem;
@@ -966,20 +1321,15 @@ p {
     font-size: 6rem;
   }
 
-  /* Hero */
   #hero h1 {
     font-size: 7rem;
   }
-  /* End Hero */
 
-  /* Service section */
   #services .service-bottom .service-item {
     flex-basis: 45%;
     margin: 1.5%;
   }
-  /* End Service section */
 
-  /* Project */
   #projects .projects-item {
     flex-direction: row;
   }
@@ -998,9 +1348,7 @@ p {
   #projects .all-projects .project-img {
     height: 100%;
   }
-  /* End Project*/
 
-  /* About */
   #about .about {
     flex-direction: row;
   }
@@ -1022,9 +1370,7 @@ p {
   #about .col-right h1 {
     text-align: left;
   }
-  /* End About */
 
-  /* Contact */
   #contact .contact {
     flex-direction: column;
     padding: 100px 0;
@@ -1049,44 +1395,49 @@ p {
     width: 100px;
   }
   #contact .contact-item .icon img {
-    object-fit: containt;
+    object-fit: contain;
   }
   #contact .contact-item .contact-info {
     width: 100%;
     text-align: left;
     padding: 20px;
   }
-  /* End Contact */
 }
-/* End Media Query For Tablet */
 
-/* Media Query for desktop */
+/* =========================
+   Media Query for desktop
+   ========================= */
 @media only screen and (min-width: 1200px) {
-  /* header */
   #header .hamburger {
     display: none;
   }
+
   #header .nav-list ul {
     position: initial;
     display: block;
     height: auto;
     width: fit-content;
-    background-color: transparent;
+    background: transparent;
+    left: auto;
+    top: auto;
   }
+
   #header .nav-list ul li {
     display: inline-block;
   }
+
+  /* linkuri: negre + hover roz */
   #header .nav-list ul li a {
     font-size: 1.8rem;
+    color: var(--nav-text);
   }
+
   #header .nav-list ul a::after {
     display: none;
   }
-  /* End header */
 
   #services .service-bottom .service-item {
     flex-basis: 22%;
     margin: 1.5%;
   }
 }
-/* End Media Query for desktop */

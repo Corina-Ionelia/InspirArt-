@@ -15,55 +15,49 @@
         <div class="header container">
             <div class="nav-bar">
                 <div class="brand">
-                    <a href="#hero">
-                        <img src="imagini/logo.svg" alt="InspirArt Logo" class="logo">
+                    <a href="index.html">
+                        <img src="imagini/logo.svg" alt="InspirArt Logo" class="logo" />
                     </a>
                 </div>
 
-
-
                 <div class="nav-list">
-                    <div class="hamburger">
+                    <div class="hamburger" aria-label="Open Menu" role="button" tabindex="0">
                         <div class="bar"></div>
                     </div>
+
                     <ul>
-                        <li><a href="about.html" target="_blank">About me</a></li>
-                        <li><a href="collection.html" target="_blank">Colection</a></li>
-                        <li><a href="courses.html" target="_blank">Courses</a></li>
-                        <li><a href="workshops.html" target="_blank">Workshops</a></li>
-                        <li><a href="contact.html" target="_blank">Contact</a></li>
-                        </a>
-                        </li>
+                        <li><a href="about.html">About me</a></li>
+                        <li><a href="collection.html">Collection</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="workshops.html">Workshops</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </section>
     <!-- End Header -->
 
-    <section id="hero">
-        <div class="hero container">
-            <div class="hero-inner fade-scroll">
-                <h1>WELCOME TO<span></span></h1>
-                <h1>MY ARTISTIC<span></span></h1>
-                <h1 class="hero-name">Xenia BOTEA<span></span></h1>
+    <section id="hero" class="hero-clean">
+        <div class="hero container hero-v2">
+            <div class="hero-top">
+                <img src="imagini/hero-left.jpg" class="hero-img hero-img--side hero-img--left" alt="Hero left" />
+                <img src="imagini/hero-center.jpg" class="hero-img hero-img--center" alt="Hero center" />
+                <img src="imagini/hero-right.jpg" class="hero-img hero-img--side hero-img--right" alt="Hero right" />
+            </div>
 
-                <!-- Linie ondulată -->
-                <div class="wave-line"></div>
+            <div class="hero-inner">
+                <h1 class="hero-name">Xenia <span class="hero-surname">BOTEA</span></h1>
+                <p class="hero-subtitle">WELCOME TO MY ARTISTIC WORLD.</p>
+                <div class="hero-wave" aria-hidden="true"></div>
 
-                <!-- Text jos -->
                 <div class="hero-about">
                     <div class="hero-col">
                         <p>
-                            I'm Xenia, a full-time artist living and working in Romania. Art has been part of my life
+                            I’m Xenia, a full-time artist living and working in Romania. Art has been part of my life
                             for as long as I can remember. I have always painted, drawn, and created.
                         </p>
-
-                        <p>
-                            At the age of 12, I made a promise to myself: to become an artist. This dream has been a
-                            constant and guiding force in my life.
-                        </p>
-
                         <p>
                             I work in series, using mixed media on various surfaces, and I enjoy experimenting. Art, the
                             natural world, and human psychology remain my greatest passions.
@@ -72,20 +66,19 @@
 
                     <div class="hero-col">
                         <p>
-                            For over 20 years I have had the privilege of combining them in what I call "the best job in
-                            the world."
-                        </p>
-
-                        <p>
                             My passion for art and for people drives me to organize workshops and creative sessions for
-                            all ages: wine & paint sessions for adults, art activities in schools, and workshops for
+                            all ages: wine &amp; paint sessions for adults, art activities in schools, and workshops for
                             children and parents.
                         </p>
-
-                        <p class="hero-sign">
-                            Warmly,<br>Xenia
+                        <p>
+                            When you engage with my work, you do not just view art; you connect with my emotions and
+                            passions. Thank you for being part of my creative journey.
                         </p>
                     </div>
+                </div>
+
+                <div class="hero-sign">
+                    <p>Warmly,<br />Xenia</p>
                 </div>
             </div>
         </div>
@@ -119,6 +112,12 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
 
     <!-- Footer -->
     <section id="footer">
@@ -162,21 +161,7 @@
         </div>
     </section>
     <!-- End Footer -->
-    <script>
-        // Blochează click dreapta pe imagini
-        document.addEventListener('contextmenu', function (e) {
-            if (e.target.tagName === 'IMG') {
-                e.preventDefault();
-            }
-        }, false);
 
-        // Blochează drag and drop (să nu poată trage imaginea pe desktop)
-        document.addEventListener('dragstart', function (e) {
-            if (e.target.tagName === 'IMG') {
-                e.preventDefault();
-            }
-        }, false);
-    </script>
     <script src="./app.js"></script>
     <!-- Buton WhatsApp fix dreapta jos -->
     <a href="https://wa.me/40758312756" target="_blank" class="whatsapp-float">
