@@ -72,3 +72,26 @@ document.addEventListener('contextmenu', (e) => {
 document.addEventListener('dragstart', (e) => {
     if (e.target.tagName === 'IMG') e.preventDefault();
 });
+
+
+// Mobile menu toggle (keeps your existing class names)
+const hamburger = document.querySelector('#header .hamburger');
+const mobileMenu = document.querySelector('#header .nav-list ul');
+const body = document.body;
+
+if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        body.classList.toggle('menu-open');
+    });
+
+    // close on link click
+    mobileMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+        });
+    });
+}

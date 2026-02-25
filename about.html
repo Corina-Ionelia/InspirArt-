@@ -2,22 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About – Xenia Botea</title>
 
-    <!-- CSS Global -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagini/cropped-fav.png" />
 
-    <!-- CSS specific About -->
-    <link rel="stylesheet" href="about-style.css">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400&display=swap"
-        rel="stylesheet">
-
-    <link rel="icon" type="image/png" href="imagini/cropped-fav.png" />
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet" />
 </head>
 
 <body>
@@ -27,17 +24,19 @@
         <div class="header container">
             <div class="nav-bar">
                 <div class="brand">
-                    <a href="index.html">
-                        <img src="imagini/logo.svg" alt="InspirArt Logo" class="logo" />
+                    <a href="index.html" aria-label="Home">
+                        <img src="imagini/logo.svg" alt="InspirA+ Logo" class="logo" />
                     </a>
                 </div>
 
                 <div class="nav-list">
-                    <div class="hamburger">
+                    <div class="hamburger" aria-label="Open menu" aria-expanded="false" role="button" tabindex="0">
                         <div class="bar"></div>
                     </div>
+
                     <ul>
-                        <li><a href="about.html">About me</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html" class="is-active">About me</a></li>
                         <li><a href="collection.html">Collection</a></li>
                         <li><a href="courses.html">Courses</a></li>
                         <li><a href="workshops.html">Workshops</a></li>
@@ -49,112 +48,136 @@
     </section>
     <!-- ================= END HEADER ================= -->
 
-
     <!-- ================= TOP BAR ================= -->
     <div class="top-bar">
-        <span>Xenia Botea</span>
-        <span>The artist</span>
+        <div class="wrap">
+            <span>Xenia Botea</span>
+            <span>The artist</span>
+        </div>
     </div>
 
+    <!-- ================= PAGE WRAP ================= -->
+    <main class="about-page">
 
-    <!-- ================= ABOUT SECTION ================= -->
-    <section class="about-section">
-        <h1 class="big-title">ABOUT ME</h1>
+        <!-- ================= ABOUT SECTION ================= -->
+        <section class="about-section">
+            <div class="wrap">
+                <h1 class="big-title">ABOUT ME</h1>
 
-        <div class="about-main">
-            <img src="imagini/about-main.jpg" class="main-img" alt="Xenia painting">
+                <div class="about-main">
+                    <div class="about-media">
+                        <img src="imagini/about-main.jpg" class="main-img" alt="Xenia painting in studio" />
+                    </div>
 
-            <div class="about-text">
-                <p>My practice is rooted in a figurative-geometric language, while remaining open to formal and
-                    conceptual diversification.</p>
-                <p>My works employ layered symbolism, at times explicit and at times subtly encoded, inviting multiple
-                    readings.
-                </p>
-                <p>Each composition is conceived as a vehicle for meaning, extending beyond its purely visual dimension.
-                </p>
+                    <div class="about-text">
+                        <p>My practice is rooted in a figurative-geometric language, while remaining open to formal and
+                            conceptual diversification.</p>
+                        <p>My works employ layered symbolism, at times explicit and at times subtly encoded, inviting
+                            multiple readings.</p>
+                        <p>Each composition is conceived as a vehicle for meaning, extending beyond its purely visual
+                            dimension.
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- ================= ART SECTION ================= -->
+        <section class="art-section">
+            <div class="wrap">
+                <div class="art-row">
+                    <div class="art-left">
+                        <h2 class="big-subtitle">THE ART<br />THAT I DO</h2>
+                    </div>
 
-    <!-- ================= ART SECTION ================= -->
-    <section class="art-section">
-        <div class="art-left">
-            <h2 class="big-subtitle">THE ART<br>THAT I DO</h2>
-        </div>
-
-        <div class="art-images">
-            <img src="imagini/art-1.jpg" alt="Artwork detail">
-            <img src="imagini/art-2.jpg" alt="Artwork process">
-        </div>
-    </section>
-
-
-    <!-- ================= CREDENTIALS ================= -->
-    <section class="credentials">
-        <h2 class="section-title">MY CREDENTIALS</h2>
-
-        <div class="cred-content">
-            <div class="cred-text">
-                <p>2022–2024 — MA in Visual Arts (Painting), Faculty of Arts, “Dunărea de Jos” University of Galați</p>
-                <p>2014–2017 — BA in Visual Arts (Painting), Faculty of Arts, “Dunărea de Jos” University of Galați</p>
-                <p>2021 — Member UAPR</p>
-                <p>2024–present — Founder, InspirA+ Studio</p>
+                    <div class="art-images">
+                        <img src="imagini/art-1.jpg" alt="Artwork detail" />
+                        <img src="imagini/art-2.jpg" alt="Studio process" />
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <img src="imagini/credentials.jpg" alt="Credentials image">
-        </div>
-    </section>
+        <!-- ================= CREDENTIALS ================= -->
+        <section class="credentials">
+            <div class="wrap">
+                <h2 class="section-title">MY CREDENTIALS</h2>
 
+                <div class="cred-content">
+                    <div class="cred-text">
+                        <p>2022–2024 — MA in Visual Arts (Painting), Faculty of Arts, “Dunărea de Jos” University of
+                            Galați
+                        </p>
+                        <p>2014–2017 — BA in Visual Arts (Painting), Faculty of Arts, “Dunărea de Jos” University of
+                            Galați
+                        </p>
+                        <p>2021 — Member UAPR</p>
+                        <p>2024–present — Founder, InspirA+ Studio</p>
+                    </div>
 
-    <!-- ================= QUOTE ================= -->
-    <section class="quote-section">
-        <h2>Every piece of art I create holds a piece of me forever.</h2>
-        <img src="imagini/quote-image.jpg" alt="Quote image">
-    </section>
-
-
-    <!-- ================= RECENT PROJECT ================= -->
-    <section class="recent">
-        <h2 class="section-title">MY MOST RECENT PROJECT</h2>
-
-        <div class="recent-grid">
-            <div>
-                <img src="imagini/project-1.jpg" alt="Project 1">
-                <p><em>“Bland”</em>, mixed-media collage</p>
+                    <div class="cred-media">
+                        <img src="imagini/credentials.jpg" alt="Xenia holding palette" />
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div>
-                <img src="imagini/project-2.jpg" alt="Project 2">
-                <p><em>“Dezlegare”</em>, acrylic on canvas</p>
+        <!-- ================= QUOTE ================= -->
+        <section class="quote-section">
+            <div class="wrap">
+                <h2 class="quote-text">Every piece of art I create holds a piece of me forever.</h2>
+                <img src="imagini/quote-image.jpg" alt="Work in progress detail" />
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- ================= RECENT PROJECT ================= -->
+        <section class="recent">
+            <div class="wrap">
+                <h2 class="section-title">MY MOST RECENT PROJECT</h2>
 
-    <!-- ================= COLLABORATE ================= -->
-    <section class="collaborate">
-        <div class="collab-left">
-            <p class="small-top">Xenia Botea</p>
-            <h2>COLLABORATE</h2>
-            <p class="desc">
-                I welcome creative partnerships, commissions, and artistic projects. Feel free to get in touch to
-                explore potential collaborations.
-            </p>
-        </div>
+                <div class="recent-grid">
+                    <article class="recent-card">
+                        <img src="imagini/project-1.jpg" alt="Mixed-media collage" />
+                        <p><em>“Bland”</em>, mixed-media collage</p>
+                    </article>
 
-        <div class="collab-right">
-            <img src="imagini/collab.jpg" alt="Collaborate image">
-        </div>
-    </section>
+                    <article class="recent-card">
+                        <img src="imagini/project-2.jpg" alt="Acrylic painting detail" />
+                        <p><em>“Dezlegare”</em>, acrylic on canvas</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
+        <!-- ================= COLLABORATE ================= -->
+        <section class="collaborate">
+            <div class="wrap">
+                <div class="collab-row">
+                    <div class="collab-left">
+                        <p class="small-top">Xenia Botea</p>
+                        <h2 class="collab-title">COLLABORATE</h2>
+                        <p class="desc">
+                            I welcome creative partnerships, commissions, and artistic projects. Feel free to get in
+                            touch to explore potential collaborations.
+                        </p>
+                    </div>
 
+                    <div class="collab-right">
+                        <img src="imagini/collab.jpg" alt="Xenia smiling with sketches" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- ================= END PAGE WRAP ================= -->
+
+    <!-- Footer -->
     <section id="footer">
         <div class="footer container">
             <div class="brand">
                 <h1><span>X</span>enia <span>B</span>otea</h1>
             </div>
-
 
             <div class="footer-welcome">
                 <h3 class="footer-title">WELCOME!</h3>
@@ -207,6 +230,7 @@
     <a href="https://wa.me/40758312756" target="_blank" rel="noopener" class="whatsapp-float">
         <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" />
     </a>
+
 </body>
 
 </html>
