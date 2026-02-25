@@ -18,9 +18,9 @@
   --shadow: rgba(0, 0, 0, 0.08);
 
   /* cashmere cream */
-  --cashmere-1: #fbf3e7;
-  --cashmere-2: #fffdf8;
-  --cashmere-3: #efe2d2;
+  --cashmere-1: #f6f1f1;
+  --cashmere-2: #ffffff;
+  --cashmere-3: #fff5ebe8;
 }
 
 /* =========================
@@ -273,7 +273,7 @@ body::after {
   }
 
   #header .nav-list ul li a:hover {
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(213, 210, 210, 0.55);
     transform: translateY(-1px);
   }
 
@@ -282,7 +282,7 @@ body::after {
   }
 
   #header .nav-list ul li a.is-active {
-    background: rgba(255, 255, 255, 0.72);
+    background: rgba(205, 203, 203, 0.72);
     border: 1px solid rgba(0, 0, 0, 0.06);
   }
 
