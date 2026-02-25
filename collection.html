@@ -30,7 +30,398 @@
                     </ul>
                 </div>
             </div>
-        </div>
+            <!doctype html>
+            <html lang="ro">
+
+            <head>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width,initial-scale=1" />
+                <title>Collection | Xenia</title>
+
+                <!-- 1) Leagă CSS-ul tău existent -->
+                <link rel="stylesheet" href="style.css" />
+
+                <!-- 2) Adaugă (sau copiază în style.css) acest fișier -->
+                <link rel="stylesheet" href="collection.css" />
+            </head>
+
+            <body class="collection-page">
+                <!-- Header-ul poate fi cel existent pe site-ul tău.
+                   Dacă ai deja header, poți elimina blocul de mai jos. -->
+                <header class="site-header">
+                    <div class="site-header__inner">
+                        <a class="site-logo" href="index.html">Xenia</a>
+
+                        <button class="nav-toggle" type="button" aria-label="Meniu" aria-expanded="false"
+                            data-nav-toggle>
+                            <span></span><span></span><span></span>
+                        </button>
+
+                        <nav class="site-nav" data-site-nav>
+                            <a href="index.html">Home</a>
+                            <a href="about.html">About</a>
+                            <a class="is-active" href="collection.html">Collection</a>
+                            <a href="contact.html">Contact</a>
+                        </nav>
+                    </div>
+                </header>
+
+                <main class="collection">
+                    <!-- HERO -->
+                    <section class="collection-hero">
+                        <div class="collection-hero__media">
+                            <video class="collection-hero__video" controls playsinline preload="metadata"
+                                poster="assets/img/interior-narratives-poster.jpg">
+                                <source src="assets/video/xenia-video.mp4" type="video/mp4" />
+                                Browserul tău nu suportă video.
+                            </video>
+                        </div>
+
+                        <div class="collection-hero__content">
+                            <h1 class="collection-hero__title">Collection</h1>
+                            <p class="collection-hero__subtitle">Original artworks • Art prints • Projects</p>
+
+                            <div class="collection-hero__chips">
+                                <span class="chip">Acrylic</span>
+                                <span class="chip">Watercolor</span>
+                                <span class="chip">Mixed media</span>
+                                <span class="chip">Prints</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ORIGINAL ARTWORKS -->
+                    <section class="collection-section" id="original-artworks">
+                        <div class="collection-section__head">
+                            <h2 class="collection-section__title">Original artworks</h2>
+                            <p class="collection-section__desc">
+                                O selecție de lucrări originale pe pânză și pe hârtie. Serii tematice, studii și piese
+                                din proiecte.
+                            </p>
+                        </div>
+
+                        <!-- SERIA 1 -->
+                        <article class="series-card">
+                            <div class="series-card__top">
+                                <img class="series-card__banner" src="assets/img/original-artworks-poster.jpg"
+                                    alt="Original Artworks – Seria 1: Identitate" loading="lazy" />
+                            </div>
+
+                            <div class="series-card__body">
+                                <div class="series-card__intro">
+                                    <h3 class="series-card__title">Seria 1: Identitate</h3>
+                                    <p class="series-card__text">
+                                        O selecție de lucrări care investighează identitatea prin limbaj cromatic,
+                                        simboluri și tensiuni ale vieții cotidiene.
+                                    </p>
+                                </div>
+
+                                <div class="artwork-grid" data-gallery="identitate">
+                                    <figure class="artwork" data-title="Stres" data-medium="Acrylic on canvas">
+                                        <button class="artwork__btn" type="button">
+                                            <img src="assets/img/stres.jpg" alt="Stres" loading="lazy" />
+                                        </button>
+                                        <figcaption class="artwork__cap">
+                                            <span class="artwork__name">Stres</span>
+                                            <span class="artwork__meta">Acrylic on canvas</span>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure class="artwork" data-title="Capriciu" data-medium="Acrylic on canvas">
+                                        <button class="artwork__btn" type="button">
+                                            <img src="assets/img/capriciu.jpg" alt="Capriciu" loading="lazy" />
+                                        </button>
+                                        <figcaption class="artwork__cap">
+                                            <span class="artwork__name">Capriciu</span>
+                                            <span class="artwork__meta">Acrylic on canvas</span>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure class="artwork" data-title="Self portrait (phone)"
+                                        data-medium="Oil on canvas">
+                                        <button class="artwork__btn" type="button">
+                                            <img src="assets/img/self-portrait-phone.jpg" alt="Self portrait (phone)"
+                                                loading="lazy" />
+                                        </button>
+                                        <figcaption class="artwork__cap">
+                                            <span class="artwork__name">Self portrait (phone)</span>
+                                            <span class="artwork__meta">Oil on canvas</span>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure class="artwork" data-title="Portrait study" data-medium="Oil on canvas">
+                                        <button class="artwork__btn" type="button">
+                                            <img src="assets/img/portrait-blur.jpg" alt="Portrait study"
+                                                loading="lazy" />
+                                        </button>
+                                        <figcaption class="artwork__cap">
+                                            <span class="artwork__name">Portrait study</span>
+                                            <span class="artwork__meta">Oil on canvas</span>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- SERIA 2 -->
+                        <article class="series-card">
+                            <div class="series-card__top">
+                                <img class="series-card__banner" src="assets/img/interior-narratives-poster.jpg"
+                                    alt="Original artworks – Serie 2: Interior Narratives" loading="lazy" />
+                            </div>
+
+                            <div class="series-card__body">
+                                <div class="series-card__intro">
+                                    <h3 class="series-card__title">Serie 2: Interior Narratives</h3>
+                                    <p class="series-card__text">
+                                        Seria explorează atelierul și interiorul domestic ca spații ale reflecției.
+                                        Lumina, tensiunea compozițională și auto-reprezentarea construiesc un fir
+                                        narativ despre prezență, grijă și identitate.
+                                    </p>
+                                </div>
+
+                                <div class="artwork-grid artwork-grid--tall" data-gallery="interior">
+                                    <figure class="artwork" data-title="Breath" data-medium="Acrylic on canvas">
+                                        <button class="artwork__btn" type="button">
+                                            <img src="assets/img/breath.jpg" alt="Breath" loading="lazy" />
+                                        </button>
+                                        <figcaption class="artwork__cap">
+                                            <span class="artwork__name">Breath</span>
+                                            <span class="artwork__meta">Acrylic on canvas</span>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure class="artwork" data-title="Proiecte" data-medium="Acrylic on canvas">
+                                        <button class="artwork__btn" type="button">
+                                            <img src="assets/img/proiecte.jpg" alt="Proiecte" loading="lazy" />
+                                        </button>
+                                        <figcaption class="artwork__cap">
+                                            <span class="artwork__name">Proiecte</span>
+                                            <span class="artwork__meta">Acrylic on canvas</span>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure class="artwork" data-title="Atelier (round)" data-medium="Acrylic on wood">
+                                        <button class="artwork__btn" type="button">
+                                            <img src="assets/img/atelier-round.jpg" alt="Atelier (round)"
+                                                loading="lazy" />
+                                        </button>
+                                        <figcaption class="artwork__cap">
+                                            <span class="artwork__name">Atelier (round)</span>
+                                            <span class="artwork__meta">Acrylic on wood</span>
+                                        </figcaption>
+                                    </figure>
+
+                                    <figure class="artwork" data-title="Library (study)"
+                                        data-medium="Acrylic on canvas">
+                                        <button class="artwork__btn" type="button">
+                                            <img src="assets/img/library.jpg" alt="Library (study)" loading="lazy" />
+                                        </button>
+                                        <figcaption class="artwork__cap">
+                                            <span class="artwork__name">Library (study)</span>
+                                            <span class="artwork__meta">Acrylic on canvas</span>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+
+                    <!-- PRINTS -->
+                    <section class="collection-section" id="prints">
+                        <div class="collection-section__head">
+                            <h2 class="collection-section__title">Art prints</h2>
+                            <p class="collection-section__desc">
+                                Mockup-uri și exemple de printuri. (Poți adăuga link de shop / formular de comandă.)
+                            </p>
+                        </div>
+
+                        <div class="artwork-grid" data-gallery="prints">
+                            <figure class="artwork" data-title="Art print mockup" data-medium="Mockup">
+                                <button class="artwork__btn" type="button">
+                                    <img src="assets/img/print-mockup-wall.jpg" alt="Art print mockup" loading="lazy" />
+                                </button>
+                                <figcaption class="artwork__cap">
+                                    <span class="artwork__name">Art print mockup</span>
+                                    <span class="artwork__meta">Mockup</span>
+                                </figcaption>
+                            </figure>
+
+                            <figure class="artwork" data-title="Art print (framed)" data-medium="Mockup">
+                                <button class="artwork__btn" type="button">
+                                    <img src="assets/img/print-framed-dog.jpg" alt="Art print (framed)"
+                                        loading="lazy" />
+                                </button>
+                                <figcaption class="artwork__cap">
+                                    <span class="artwork__name">Art print (framed)</span>
+                                    <span class="artwork__meta">Mockup</span>
+                                </figcaption>
+                            </figure>
+
+                            <figure class="artwork" data-title="Dog study" data-medium="Watercolor / mixed">
+                                <button class="artwork__btn" type="button">
+                                    <img src="assets/img/dog-painting.jpg" alt="Dog study" loading="lazy" />
+                                </button>
+                                <figcaption class="artwork__cap">
+                                    <span class="artwork__name">Dog study</span>
+                                    <span class="artwork__meta">Watercolor / mixed</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <!-- PROJECTS / STUDIO -->
+                    <section class="collection-section" id="projects">
+                        <div class="collection-section__head">
+                            <h2 class="collection-section__title">Projects & studio</h2>
+                            <p class="collection-section__desc">
+                                Instalații, proces, imagini din atelier și expuneri.
+                            </p>
+                        </div>
+
+                        <div class="artwork-grid artwork-grid--wide" data-gallery="projects">
+                            <figure class="artwork" data-title="Exhibition view" data-medium="Photo">
+                                <button class="artwork__btn" type="button">
+                                    <img src="assets/img/exhibition-abstract.jpg" alt="Exhibition view"
+                                        loading="lazy" />
+                                </button>
+                                <figcaption class="artwork__cap">
+                                    <span class="artwork__name">Exhibition view</span>
+                                    <span class="artwork__meta">Photo</span>
+                                </figcaption>
+                            </figure>
+
+                            <figure class="artwork" data-title="Atelier (studio scene)" data-medium="Acrylic on canvas">
+                                <button class="artwork__btn" type="button">
+                                    <img src="assets/img/atelier-studio.jpg" alt="Atelier (studio scene)"
+                                        loading="lazy" />
+                                </button>
+                                <figcaption class="artwork__cap">
+                                    <span class="artwork__name">Atelier (studio scene)</span>
+                                    <span class="artwork__meta">Acrylic on canvas</span>
+                                </figcaption>
+                            </figure>
+
+                            <figure class="artwork" data-title="Storyline cards (installation)"
+                                data-medium="Mixed media">
+                                <button class="artwork__btn" type="button">
+                                    <img src="assets/img/cards-on-bed.jpg" alt="Storyline cards (installation)"
+                                        loading="lazy" />
+                                </button>
+                                <figcaption class="artwork__cap">
+                                    <span class="artwork__name">Storyline cards</span>
+                                    <span class="artwork__meta">Mixed media</span>
+                                </figcaption>
+                            </figure>
+
+                            <figure class="artwork" data-title="Puzzle pieces" data-medium="Installation photo">
+                                <button class="artwork__btn" type="button">
+                                    <img src="assets/img/puzzle-pieces.jpg" alt="Puzzle pieces" loading="lazy" />
+                                </button>
+                                <figcaption class="artwork__cap">
+                                    <span class="artwork__name">Puzzle pieces</span>
+                                    <span class="artwork__meta">Installation photo</span>
+                                </figcaption>
+                            </figure>
+
+                            <figure class="artwork" data-title="Puzzle on wall" data-medium="Installation photo">
+                                <button class="artwork__btn" type="button">
+                                    <img src="assets/img/puzzle-on-wall.jpg" alt="Puzzle on wall" loading="lazy" />
+                                </button>
+                                <figcaption class="artwork__cap">
+                                    <span class="artwork__name">Puzzle on wall</span>
+                                    <span class="artwork__meta">Installation photo</span>
+                                </figcaption>
+                            </figure>
+
+                            <figure class="artwork" data-title="Puzzle object" data-medium="Installation photo">
+                                <button class="artwork__btn" type="button">
+                                    <img src="assets/img/puzzle-object.jpg" alt="Puzzle object" loading="lazy" />
+                                </button>
+                                <figcaption class="artwork__cap">
+                                    <span class="artwork__name">Puzzle object</span>
+                                    <span class="artwork__meta">Installation photo</span>
+                                </figcaption>
+                            </figure>
+
+                            <figure class="artwork" data-title="Puzzle layout" data-medium="Installation photo">
+                                <button class="artwork__btn" type="button">
+                                    <img src="assets/img/puzzle-on-bed.jpg" alt="Puzzle layout" loading="lazy" />
+                                </button>
+                                <figcaption class="artwork__cap">
+                                    <span class="artwork__name">Puzzle layout</span>
+                                    <span class="artwork__meta">Installation photo</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <!-- STUDIES -->
+                    <section class="collection-section" id="studies">
+                        <div class="collection-section__head">
+                            <h2 class="collection-section__title">Studies</h2>
+                            <p class="collection-section__desc">
+                                Studii rapide / desen.
+                            </p>
+                        </div>
+
+                        <div class="artwork-grid" data-gallery="studies">
+                            <figure class="artwork" data-title="Figure study" data-medium="Charcoal on paper">
+                                <button class="artwork__btn" type="button">
+                                    <img src="assets/img/figure-study-1.jpg" alt="Figure study" loading="lazy" />
+                                </button>
+                                <figcaption class="artwork__cap">
+                                    <span class="artwork__name">Figure study</span>
+                                    <span class="artwork__meta">Charcoal on paper</span>
+                                </figcaption>
+                            </figure>
+
+                            <figure class="artwork" data-title="Figure study (back)" data-medium="Charcoal on paper">
+                                <button class="artwork__btn" type="button">
+                                    <img src="assets/img/figure-study-2.jpg" alt="Figure study (back)" loading="lazy" />
+                                </button>
+                                <figcaption class="artwork__cap">
+                                    <span class="artwork__name">Figure study (back)</span>
+                                    <span class="artwork__meta">Charcoal on paper</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <footer class="site-footer">
+                        <p>© <span id="year"></span> Xenia. All rights reserved.</p>
+                    </footer>
+                </main>
+
+                <!-- LIGHTBOX -->
+                <div class="lightbox" hidden aria-hidden="true" role="dialog" aria-label="Artwork preview"
+                    data-lightbox>
+                    <div class="lightbox__backdrop" data-lightbox-close></div>
+
+                    <div class="lightbox__panel" role="document">
+                        <button class="lightbox__close" type="button" aria-label="Închide"
+                            data-lightbox-close>✕</button>
+
+                        <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Înapoi"
+                            data-lightbox-prev>‹</button>
+                        <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Înainte"
+                            data-lightbox-next>›</button>
+
+                        <figure class="lightbox__figure">
+                            <img class="lightbox__img" alt="" />
+                            <figcaption class="lightbox__cap">
+                                <div class="lightbox__title"></div>
+                                <div class="lightbox__meta"></div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <script src="collection.js"></script>
+            </body>
+
+            </html>
+
     </section>
 
     <main class="page">
@@ -84,11 +475,13 @@
                 </p>
 
                 <p class="footer-text">
-                    Here you will find my original artworks, fine art prints and workshops. My art comes to life in many different ways. I hope you’ll enjoy your time here, and thank you for collecting.
+                    Here you will find my original artworks, fine art prints and workshops. My art comes to life in many
+                    different ways. I hope you’ll enjoy your time here, and thank you for collecting.
                 </p>
 
                 <p class="footer-text">
-                    If you’d like to connect with me, feel free to drop me an email or follow me on social media. I’d love to hear from you!
+                    If you’d like to connect with me, feel free to drop me an email or follow me on social media. I’d
+                    love to hear from you!
                 </p>
             </div>
 
@@ -105,7 +498,8 @@
                 <a href="https://wa.me/40758312756" target="_blank" rel="noopener">
                     <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" />
                 </a>
-                <a href="https://www.google.com/maps/search/?api=1&query=Strada+Universitatii+3+Galati" target="_blank" rel="noopener">
+                <a href="https://www.google.com/maps/search/?api=1&query=Strada+Universitatii+3+Galati" target="_blank"
+                    rel="noopener">
                     <img src="https://img.icons8.com/fluency/48/000000/google-maps-new.png" alt="Google Maps" />
                 </a>
             </div>
