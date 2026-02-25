@@ -109,7 +109,7 @@ body::after {
   opacity: 0.25;
   background: radial-gradient(
       280px 90px at 22% 42%,
-      rgba(255, 72, 218, 0.1),
+      rgba(202, 161, 194, 0.1),
       transparent 70%
     ),
     radial-gradient(
@@ -148,7 +148,7 @@ body::after {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 72, 218, 0.55),
+    rgba(199, 186, 144, 0.73),
     transparent
   );
   transform: rotate(-2deg);
@@ -172,19 +172,19 @@ body::after {
 
   background: radial-gradient(
       950px 260px at 12% 35%,
-      rgba(255, 72, 218, 0.2),
+      rgba(236, 216, 232, 0.2),
       transparent 62%
     ),
     radial-gradient(
       860px 260px at 90% 40%,
-      rgba(255, 72, 218, 0.14),
+      rgba(223, 200, 218, 0.14),
       transparent 62%
     ),
     linear-gradient(
       90deg,
       var(--cashmere-2),
       var(--cashmere-1),
-      rgba(255, 72, 218, 0.1)
+      rgba(233, 233, 223, 0.1)
     );
 
   background-size: 140% 140%;
@@ -301,7 +301,7 @@ body::after {
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 72, 218, 0.6),
+      rgba(192, 189, 163, 0.6),
       transparent
     );
     opacity: 0;
@@ -339,19 +339,19 @@ body::after {
 
   background: radial-gradient(
       1000px 320px at 20% 25%,
-      rgba(255, 72, 218, 0.18),
+      rgba(221, 223, 201, 0.18),
       transparent 60%
     ),
     radial-gradient(
       900px 300px at 80% 70%,
-      rgba(255, 72, 218, 0.12),
+      rgba(235, 234, 221, 0.12),
       transparent 62%
     ),
     linear-gradient(
       180deg,
       rgba(251, 243, 231, 0.98) 0%,
       rgba(255, 255, 255, 0.98) 55%,
-      rgba(255, 72, 218, 0.14) 100%
+      rgba(221, 224, 203, 0.14) 100%
     );
 
   backdrop-filter: blur(12px);
@@ -373,7 +373,7 @@ body::after {
 
   background: radial-gradient(
       220px 36px at 40% 45%,
-      rgba(255, 72, 218, 0.1),
+      rgba(202, 183, 198, 0.1),
       transparent 70%
     ),
     rgba(255, 255, 255, 0.6);
@@ -406,7 +406,7 @@ body::after {
   margin-right: 10px;
   background: radial-gradient(
       140px 40px at 40% 40%,
-      rgba(255, 72, 218, 0.1),
+      rgba(233, 210, 228, 0.1),
       transparent 70%
     ),
     rgba(255, 255, 255, 0.35);
@@ -542,7 +542,7 @@ body.menu-open {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 72, 218, 0.55),
+    rgba(209, 88, 185, 0.55),
     transparent
   );
   transform: rotate(-2deg);

@@ -4,113 +4,148 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms & Conditions - InspirA+</title>
     <link rel="stylesheet" href="style.css" />
-    <title>InspirA+</title>
-    <link rel="icon" type="image/png" href="imagini/cropped-fav.png" />
+
+    <style>
+        body {
+            background-color: #000;
+            color: rgb(0, 0, 0);
+            font-family: 'Montserrat', sans-serif;
+            padding: 80px 50px;
+        }
+
+        .container-terms {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2 {
+            color: #eb00ff;
+            text-transform: uppercase;
+            margin-top: 40px;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 12px 22px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: #111;
+            text-decoration: none;
+            background: rgba(231, 233, 219, 0.897);
+            border-radius: 999px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .back-link::after {
+            content: "";
+            position: absolute;
+            left: 12%;
+            right: 12%;
+            bottom: 6px;
+            height: 10px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, transparent, rgba(255, 72, 218, 0.6), transparent);
+            opacity: 0.35;
+            transform: rotate(-2deg);
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #ff48da;
+            transform: translateY(-2px);
+        }
+
+        .back-link:hover::after {
+            opacity: 0.6;
+        }
+
+        p,
+        li {
+            font-size: 2rem;
+            color: #000000e0;
+        }
+
+        strong {
+            color: #000;
+            font-weight: 700;
+        }
+
+        /* mic spațiu ca să nu se lipească de footer, dacă footer-ul e mare */
+
+        .page-spacer {
+            height: 40px;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container-terms">
+        <a href="index.html" class="back-link">← Back to Home</a>
 
-    <!-- Header -->
-    <section id="header">
-        <div class="header container">
-            <div class="nav-bar">
-                <div class="brand">
-                    <a href="index.html" aria-label="Home">
-                        <img src="imagini/logo.svg" alt="InspirArt Logo" class="logo" />
-                    </a>
-                </div>
+        <h1>Terms & Conditions</h1>
 
-                <div class="nav-list">
-                    <div class="hamburger" aria-label="Open Menu" role="button" tabindex="0">
-                        <div class="bar"></div>
-                    </div>
-                    <ul>
-                        <li><a href="about.html">About me</a></li>
-                        <li><a href="collection.html">Collection</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="workshops.html">Workshops</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
+        <h2>1. General</h2>
+        <p>
+            This website provides information about the artist <strong>Xenia Botea</strong>, her original artworks,
+            prints, commissions, workshops, and art courses. By accessing and using this website, you agree to the
+            following terms and conditions.
+        </p>
 
-            </div>
-        </div>
-    </section>
-    <!-- End Header -->
+        <h2>2. Orders, Commissions & Workshops</h2>
+        <ul>
+            <li>Original commissioned artworks and workshop registrations are secured with an advance payment.</li>
+            <li>Physical prints are produced on demand after payment confirmation.</li>
+            <li>
+                The purchase of an original artwork transfers ownership of the physical piece only. Copyright and
+                reproduction rights remain the exclusive property of the artist.
+            </li>
+            <li>
+                The artist reserves the right to reproduce the artwork in the form of prints, limited editions, or other
+                formats for artistic or commercial purposes.
+            </li>
+            <li>
+                Public display of purchased artworks is permitted. Any commercial reproduction requires prior written
+                consent from the artist.
+            </li>
+        </ul>
 
-    <!-- Hero -->
-    <section id="hero" class="hero-clean">
-        <div class="hero container hero-v2">
-            <div class="hero-top">
-                <img src="imagini/hero-left.jpg" class="hero-img hero-img--side hero-img--left" alt="Hero left" />
-                <img src="imagini/hero-center.jpg" class="hero-img hero-img--center" alt="Hero center" />
-                <img src="imagini/hero-right.jpg" class="hero-img hero-img--side hero-img--right" alt="Hero right" />
-            </div>
+        <h2>3. Prints</h2>
+        <p>
+            Purchasing a print grants ownership of the physical object only, not the image itself. Prints may not be
+            copied, scanned, digitally distributed, or used for commercial purposes without the artist’s written
+            permission.
+        </p>
 
-            <div class="hero-inner">
-                <h1 class="hero-name">Xenia <span class="hero-surname">BOTEA</span></h1>
-                <p class="hero-subtitle">WELCOME TO MY ARTISTIC WORLD.</p>
-                <div class="hero-wave" aria-hidden="true"></div>
+        <h2>4. Copyright</h2>
+        <p>
+            All artworks are protected under international copyright laws. Unauthorized reproduction, distribution, or
+            resale of digital or physical works is strictly prohibited.
+        </p>
 
-                <div class="hero-about">
-                    <div class="hero-col">
-                        <p>
-                            I’m Xenia, a full-time artist living and working in Romania. Art has been part of my life
-                            for as long as I can remember. I have always painted, drawn, and created.
-                        </p>
-                        <p>
-                            I work in series, using mixed media on various surfaces, and I enjoy experimenting. Art, the
-                            natural world, and human psychology remain my greatest passions.
-                        </p>
-                    </div>
+        <h2>5. Personal Data</h2>
+        <p>
+            Personal information provided during orders or communication is collected solely for processing orders,
+            delivery, and customer communication. Data is not sold or shared with third parties except when necessary
+            for delivery services.
+        </p>
 
-                    <div class="hero-col">
-                        <p>
-                            My passion for art and for people drives me to organize workshops and creative sessions for
-                            all ages: wine &amp; paint sessions for adults, art activities in schools, and workshops for
-                            children and parents.
-                        </p>
-                        <p>
-                            When you engage with my work, you do not just view art; you connect with my emotions and
-                            passions. Thank you for being part of my creative journey.
-                        </p>
-                    </div>
-                </div>
+        <h2>6. Contact</h2>
+        <p>
+            For any questions regarding these terms, please contact the artist via WhatsApp or email.
+        </p>
 
-                <div class="hero-sign">
-                    <p>Warmly,<br />Xenia</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <p style="margin-top: 40px; font-size: 1.4rem; color: #000000a6;">
+            Last updated: February 2026
+        </p>
 
-    <!-- Newsletter Popup -->
-    <div id="newsletter-popup">
-        <div class="popup-content">
-            <span class="close-btn">&times;</span>
-            <h2>Subscribe to the newsletter</h2>
-            <p>Stay up to date with the latest news and events from InspirArt!</p>
-            <form id="newsletter-form">
-                <input type="email" placeholder="Enter your email address" required />
-                <button type="submit">Subscribe</button>
-            </form>
-
-            <div class="social-icons">
-                <a href="https://www.facebook.com/inspiraplus.ro" target="_blank" rel="noopener">
-                    <img src="https://img.icons8.com/fluency/48/facebook-new.png" alt="Facebook" />
-                </a>
-                <a href="https://www.instagram.com/inspiraplus.ro/" target="_blank" rel="noopener">
-                    <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram" />
-                </a>
-                <a href="mailto:Contact@inspiraplus.ro">
-                    <img src="https://img.icons8.com/fluency/48/email.png" alt="Email" />
-                </a>
-                <a href="https://www.tiktok.com/@inspiraplus.ro" target="_blank" rel="noopener">
-                    <img src="https://img.icons8.com/color/48/tiktok--v1.png" alt="TikTok" />
-                </a>
-            </div>
-        </div>
+        <div class="page-spacer"></div>
     </div>
 
     <!-- Footer -->
@@ -118,6 +153,24 @@
         <div class="footer container">
             <div class="brand">
                 <h1><span>X</span>enia <span>B</span>otea</h1>
+            </div>
+
+            <div class="footer-welcome">
+                <h3 class="footer-title">WELCOME!</h3>
+
+                <p class="footer-text">
+                    Hi! Welcome to my world! I’m artist Xenia Botea.
+                </p>
+
+                <p class="footer-text">
+                    Here you will find my original artworks, fine art prints and workshops. My art comes to life in many
+                    different ways. I hope you’ll enjoy your time here, and thank you for collecting.
+                </p>
+
+                <p class="footer-text">
+                    If you’d like to connect with me, feel free to drop me an email or follow me on social media. I’d
+                    love to hear from you!
+                </p>
             </div>
 
             <div class="social-icons">
@@ -139,24 +192,6 @@
                 </a>
             </div>
 
-            <div class="footer-welcome">
-                <h3 class="footer-title">WELCOME!</h3>
-
-                <p class="footer-text">
-                    Hi! Welcome to my world! I’m artist Xenia Botea.
-                </p>
-
-                <p class="footer-text">
-                    Here you will find my original artworks, fine art prints and workshops. My art comes to life in many
-                    different ways. I hope you’ll enjoy your time here, and thank you for collecting.
-                </p>
-
-                <p class="footer-text">
-                    If you’d like to connect with me, feel free to drop me an email or follow me on social media. I’d
-                    love to hear from you!
-                </p>
-            </div>
-
             <p class="copyright">© 2026 | All rights reserved InspirA+</p>
             <div class="legal">
                 <a href="termeni.html">Terms &amp; Conditions</a>
@@ -171,7 +206,6 @@
     <a href="https://wa.me/40758312756" target="_blank" rel="noopener" class="whatsapp-float">
         <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" />
     </a>
-
 </body>
 
 </html>

@@ -9,9 +9,9 @@
     <style>
         body {
             background-color: #000;
-            color: white;
+            color: rgb(0, 0, 0);
             font-family: 'Montserrat', sans-serif;
-            padding: 40px 20px;
+            padding: 80px 50px;
         }
 
         .container-terms {
@@ -24,20 +24,56 @@
         h2 {
             color: #eb00ff;
             text-transform: uppercase;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .back-link {
-            color: #fff;
-            text-decoration: underline;
-            margin-bottom: 20px;
             display: inline-block;
+            padding: 12px 22px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: #111;
+            text-decoration: none;
+            background: rgba(231, 233, 219, 0.897);
+            border-radius: 999px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .back-link::after {
+            content: "";
+            position: absolute;
+            left: 12%;
+            right: 12%;
+            bottom: 6px;
+            height: 10px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, transparent, rgba(255, 72, 218, 0.6), transparent);
+            opacity: 0.35;
+            transform: rotate(-2deg);
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #ff48da;
+            transform: translateY(-2px);
+        }
+
+        .back-link:hover::after {
+            opacity: 0.6;
         }
 
         p,
         li {
-            font-size: 1.1rem;
-            color: #ccc;
+            font-size: 2rem;
+            color: #000000e0;
+        }
+
+        strong {
+            color: #000;
+            font-weight: 700;
         }
     </style>
 </head>
@@ -45,46 +81,57 @@
 <body>
     <div class="container-terms">
         <a href="index.html" class="back-link">← Back to Home</a>
+
         <h1>Terms & Conditions</h1>
 
         <h2>1. General</h2>
-        <p>This website provides information about the artist Xenia Botea, her original artworks, prints, commissions,
-            as well as art workshops and courses. Accessing and using the website implies acceptance of these terms and
-            conditions.
+        <p>
+            This website provides information about the artist <strong>Xenia Botea</strong>, her original artworks,
+            prints, commissions, workshops, and art courses. By accessing and using this website, you agree to the
+            following terms and conditions.
         </p>
 
-        <h2>2. Orders, Commissions, and Workshops</h2>
+        <h2>2. Orders, Commissions & Workshops</h2>
         <ul>
-            <li>Original commissioned artworks and workshops/courses are secured with an advance payment to confirm the
-                order or reservation.</li>
-            <li>Physical prints can be produced on demand after payment confirmation.</li>
-            <li>he sale of an original artwork does not transfer copyright or reproduction rights. All image rights
-                remain the property of the artist. The artist reserves the right to reproduce the artwork in the form of
-                prints, limited editions, or other
-                formats, for artistic or commercial purposes, without the buyer’s further consent</li>
-            <li>Public display of the artwork by the buyer is permitted. Reproduction of the image for promotional
-                purposes directly related to exhibitions (catalogues, press materials, exhibition websites) is allowed
-                with credit to the artist. Any commercial
-                use remains subject to the artist’s prior written consent.</li>
-            <li>rints The purchase of a print grants ownership of the physical object only, not the image itself. All
-                copyright and reproduction rights remain the property of the artist. Prints may not be reproduced,
-                copied, scanned, digitally distributed,
-                or used for commercial purposes. Public display is permitted. Use of the image for promotional materials
-                directly related to exhibitions is allowed with proper credit to the artist. Any other use of the image
-                requires the artist’s prior
-                written consent.</li>
+            <li>Original commissioned artworks and workshop registrations are secured with an advance payment.</li>
+            <li>Physical prints are produced on demand after payment confirmation.</li>
+            <li>The purchase of an original artwork transfers ownership of the physical piece only. Copyright and
+                reproduction rights remain the exclusive property of the artist.</li>
+            <li>The artist reserves the right to reproduce the artwork in the form of prints, limited editions, or other
+                formats for artistic or commercial purposes.</li>
+            <li>Public display of purchased artworks is permitted. Any commercial reproduction requires prior written
+                consent from the artist.</li>
         </ul>
 
+        <h2>3. Prints</h2>
+        <p>
+            Purchasing a print grants ownership of the physical object only, not the image itself. Prints may not be
+            copied, scanned, digitally distributed, or used for commercial purposes without the artist’s written
+            permission.
+        </p>
+
         <h2>4. Copyright</h2>
-        <p>All artworks are protected by copyright. Digital prints are for personal use only. Distribution,
-            reproduction, or resale without the artist’s permission is prohibited.</p>
+        <p>
+            All artworks are protected under international copyright laws. Unauthorized reproduction, distribution, or
+            resale of digital or physical works is strictly prohibited.
+        </p>
 
-        <h2>6. Personal Data</h2>
-        <p>Personal data provided are collected solely for order confirmation, delivery, and communication. Data will
-            not be shared with third parties.</p>
+        <h2>5. Personal Data</h2>
+        <p>
+            Personal information provided during orders or communication is collected solely for processing orders,
+            delivery, and customer communication. Data is not sold or shared with third parties except when necessary
+            for delivery services.
+        </p>
 
-        <h2>8. Contact</h2>
-        <p>For any questions, please contact the artist via WhatsApp or email.</p>
+        <h2>6. Contact</h2>
+        <p>
+            For any questions regarding these terms, please contact the artist via WhatsApp or email.
+        </p>
+
+        <p style="margin-top: 40px; font-size: 1.4rem; color: #000000a6;">
+            Last updated: February 2026
+        </p>
+
     </div>
 </body>
 
