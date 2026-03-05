@@ -1,148 +1,285 @@
 <!doctype html>
-<html lang="ro">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Collection | InspirA+</title>
-    <link rel="stylesheet" href="./style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InspirA+ | Collection</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="collection-page">
-    <!-- Header-ul tău existent (păstrează-l exact cum îl ai) -->
-    <section id="header">
-        <div class="header">
-            <div class="nav-bar">
-                <a class="brand" href="index.html">
-                    <img class="logo" src="assets/img/logo.png" alt="InspirA+" />
-                </a>
-
-                <div class="nav-list">
-                    <div class="hamburger">
-                        <div class="bar"></div>
-                    </div>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About me</a></li>
-                        <li><a class="is-active" href="collection.html">Collection</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="workshops.html">Workshops</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
+  <!-- HEADER (identic cu HOME / ABOUT) -->
+  <section id="header">
+    <div class="header">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="index.html" aria-label="Home">
+            <img class="logo" src="imagini/logo.svg" alt="InspirA+ logo" />
+          </a>
         </div>
+
+        <div class="nav-list">
+          <div class="hamburger" aria-label="Open menu" aria-expanded="false" role="button" tabindex="0">
+            <div class="bar"></div>
+          </div>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a class="is-active" href="collection.html">Collection</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main" class="collection-wrap">
+    <!-- TOP VIDEO (înainte de Series 1, păstrează logica ta) -->
+    <section class="collection-video">
+      <div class="collection-video__card">
+        <video class="collection-video__media" src="assets/video/xenia-video.mp4" controls playsinline
+          preload="metadata"></video>
+      </div>
     </section>
 
-    <main class="collection">
-        <!-- HERO -->
-        <section class="collection-hero">
-            <div class="collection-hero__media">
-                <video class="collection-hero__video" controls preload="metadata">
-                    <!-- verifică numele exact al fișierului -->
-                    <source src="assets/video/xenia.mp4" type="video/mp4" />
-                </video>
-            </div>
+    <!-- SERIES 1 (design Canva) -->
+    <section class="series series--one" id="series-1">
+      <div class="series-hero">
+        <img class="series-hero__img" src="imagini/collection/hero-identity.jpg" alt="Series 1 header" loading="lazy" />
+      </div>
 
-            <div class="collection-hero__content">
-                <h1 class="collection-hero__title">Collection</h1>
-                <p class="collection-hero__subtitle">
-                    Original artworks · Art prints · Projects
-                </p>
-                <div class="collection-hero__chips">
-                    <span class="chip">Acrylic</span>
-                    <span class="chip">Watercolor</span>
-                    <span class="chip">Mixed media</span>
-                    <span class="chip">Prints</span>
-                </div>
-            </div>
-        </section>
+      <div class="series-head">
+        <h1 class="series-title">Original Artworks</h1>
+        <div class="series-subtitle">Series 1: Identity</div>
 
-        <!-- SECTION 1 -->
-        <section class="collection-section">
-            <div class="collection-section__head">
-                <h2 class="collection-section__title">Original artworks</h2>
-                <p class="collection-section__desc">
-                    O selecție de lucrări originale pe pânză și pe hârtie.
-                </p>
-            </div>
-
-            <article class="series-card">
-                <img class="series-card__banner" src="assets/img/collection-page-structure-1.jpg" alt="Seria I" />
-
-                <div class="series-card__body">
-                    <div class="series-card__intro">
-                        <h3 class="series-card__title">Seria I: Identitate</h3>
-                        <p class="series-card__text">
-                            Lucrări care investighează identitatea prin limbaj cromatic și simboluri.
-                        </p>
-                    </div>
-
-                    <div class="artwork-grid">
-                        <figure class="artwork">
-                            <button class="artwork__btn" type="button" data-src="assets/img/stres.jpg" data-title="Stres" data-meta="Mixed media">
-                                <img src="assets/img/stres.jpg" alt="Stres" />
-                            </button>
-                            <figcaption class="artwork__cap">
-                                <div class="artwork__name">Stres</div>
-                                <div class="artwork__meta">Mixed media</div>
-                            </figcaption>
-                        </figure>
-
-                        <figure class="artwork">
-                            <button class="artwork__btn" type="button" data-src="assets/img/capriciu.jpg" data-title="Capriciu" data-meta="Acrylic">
-                                <img src="assets/img/capriciu.jpg" alt="Capriciu" />
-                            </button>
-                            <figcaption class="artwork__cap">
-                                <div class="artwork__name">Capriciu</div>
-                                <div class="artwork__meta">Acrylic</div>
-                            </figcaption>
-                        </figure>
-
-                        <figure class="artwork">
-                            <button class="artwork__btn" type="button" data-src="assets/img/self-portrait-phone.jpg" data-title="Self portrait (phone)" data-meta="Acrylic">
-                                <img src="assets/img/self-portrait-phone.jpg" alt="Self portrait (phone)" />
-                            </button>
-                            <figcaption class="artwork__cap">
-                                <div class="artwork__name">Self portrait (phone)</div>
-                                <div class="artwork__meta">Acrylic</div>
-                            </figcaption>
-                        </figure>
-
-                        <figure class="artwork">
-                            <button class="artwork__btn" type="button" data-src="assets/img/portrait-study.jpg" data-title="Portrait study" data-meta="Drawing">
-                                <img src="assets/img/portrait-study.jpg" alt="Portrait study" />
-                            </button>
-                            <figcaption class="artwork__cap">
-                                <div class="artwork__name">Portrait study</div>
-                                <div class="artwork__meta">Drawing</div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </article>
-        </section>
-
-        <!-- LIGHTBOX -->
-        <div class="lightbox" hidden>
-            <div class="lightbox__backdrop" data-close></div>
-            <div class="lightbox__panel" role="dialog" aria-modal="true">
-                <button class="lightbox__close" type="button" data-close>✕</button>
-                <button class="lightbox__nav lightbox__nav--prev" type="button" data-prev>‹</button>
-                <button class="lightbox__nav lightbox__nav--next" type="button" data-next>›</button>
-
-                <figure class="lightbox__figure">
-                    <img class="lightbox__img" alt="" />
-                    <figcaption class="lightbox__cap">
-                        <div class="lightbox__title"></div>
-                        <div class="lightbox__meta"></div>
-                    </figcaption>
-                </figure>
-            </div>
+        <div class="series-text">
+          <p>
+            The works presented here bring together a selection of original pieces by Xenia Botea, drawn from series and
+            lines of inquiry that define her artistic practice.
+          </p>
+          <p>
+            At their core lies a sustained investigation of affective registers and processes of identity
+            transformation, articulated through chromatic dynamics and a carefully developed pictorial language.
+          </p>
+          <p>
+            The visual vocabulary integrates echoes of geometric abstraction and expressionism, shaping images that
+            engage symbolically with themes such as identity, maternity, childhood, inner balance, and the tensions of
+            everyday existence.
+          </p>
+          <p>
+            Additional works, including large-scale pieces or works belonging to distinct corpora, may be available upon
+            request.
+          </p>
         </div>
-    </main>
+      </div>
 
-    <script src="./app.js"></script>
+      <div class="art-grid art-grid--two">
+        <figure class="art-card" data-lightbox-item>
+          <img src="imagini/collection/dezlegare.png" alt="Dezlegare" loading="lazy"
+            data-lightbox-src="imagini/collection/dezlegare.png"
+            data-lightbox-caption="Dezlegare — Acrylic on canvas, 30 - 40 cm" />
+          <figcaption>
+            <div class="art-name">Dezlegare</div>
+            <div class="art-meta">Acrylic on canvas, 30 - 40 cm</div>
+          </figcaption>
+        </figure>
+
+        <figure class="art-card" data-lightbox-item>
+          <img src="imagini/collection/capriciu.png" alt="Capriciu" loading="lazy"
+            data-lightbox-src="imagini/collection/capriciu.png"
+            data-lightbox-caption="Capriciu — Acrylic on canvas, 24 - 50 cm" />
+          <figcaption>
+            <div class="art-name">Capriciu</div>
+            <div class="art-meta">Acrylic on canvas, 24 - 50 cm</div>
+          </figcaption>
+        </figure>
+
+        <figure class="art-card" data-lightbox-item>
+          <img src="imagini/collection/stres.png" alt="Stres" loading="lazy"
+            data-lightbox-src="imagini/collection/stres.png"
+            data-lightbox-caption="Stres — Acrylic on canvas, 50 - 50 cm" />
+          <figcaption>
+            <div class="art-name">Stres</div>
+            <div class="art-meta">Acrylic on canvas, 50 - 50 cm</div>
+          </figcaption>
+        </figure>
+
+        <figure class="art-card" data-lightbox-item>
+          <img src="imagini/collection/matern.png" alt="Matern" loading="lazy"
+            data-lightbox-src="imagini/collection/matern.png"
+            data-lightbox-caption="Matern — Acrylic on canvas, 40 - 40 cm" />
+          <figcaption>
+            <div class="art-name">Matern</div>
+            <div class="art-meta">Acrylic on canvas, 40 - 40 cm</div>
+          </figcaption>
+        </figure>
+
+        <figure class="art-card" data-lightbox-item>
+          <img src="imagini/collection/figuri-pe-burta-goala.png" alt="Figuri pe burta goala" loading="lazy"
+            data-lightbox-src="imagini/collection/figuri-pe-burta-goala.png"
+            data-lightbox-caption="Figuri pe burta goala — Acrylic on canvas, 24 - 60 cm" />
+          <figcaption>
+            <div class="art-name">Figuri pe burta goala</div>
+            <div class="art-meta">Acrylic on canvas, 24 - 60 cm</div>
+          </figcaption>
+        </figure>
+
+        <figure class="art-card" data-lightbox-item>
+          <img src="imagini/collection/atelier.png" alt="Atelier" loading="lazy"
+            data-lightbox-src="imagini/collection/atelier.png"
+            data-lightbox-caption="Atelier — Acrylic on canvas, 70 - 100 cm" />
+          <figcaption>
+            <div class="art-name">Atelier</div>
+            <div class="art-meta">Acrylic on canvas, 70 - 100 cm</div>
+          </figcaption>
+        </figure>
+
+        <figure class="art-card" data-lightbox-item>
+          <img src="imagini/collection/gura-lumii.png" alt="Gura lumii" loading="lazy"
+            data-lightbox-src="imagini/collection/gura-lumii.png"
+            data-lightbox-caption="Gura lumii — Acrylic on canvas, 50 - 30 cm" />
+          <figcaption>
+            <div class="art-name">Gura lumii</div>
+            <div class="art-meta">Acrylic on canvas, 50 - 30 cm</div>
+          </figcaption>
+        </figure>
+
+        <figure class="art-card" data-lightbox-item>
+          <img src="imagini/collection/viciu.png" alt="Viciu" loading="lazy"
+            data-lightbox-src="imagini/collection/viciu.png"
+            data-lightbox-caption="Viciu — Acrylic on canvas, 50 - 40 cm" />
+          <figcaption>
+            <div class="art-name">Viciu</div>
+            <div class="art-meta">Acrylic on canvas, 50 - 40 cm</div>
+          </figcaption>
+        </figure>
+
+        <figure class="art-card" data-lightbox-item>
+          <img src="imagini/collection/trendul.png" alt="Trendul" loading="lazy"
+            data-lightbox-src="imagini/collection/trendul.png"
+            data-lightbox-caption="Trendul — Acrylic on canvas, 40 - 40 cm" />
+          <figcaption>
+            <div class="art-name">Trendul</div>
+            <div class="art-meta">Acrylic on canvas, 40 - 40 cm</div>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SERIES 2 (design Canva) -->
+    <section class="series series--two" id="series-2">
+      <div class="series-hero">
+        <img class="series-hero__img" src="imagini/collection/artist-studio.jpg" alt="Series 2 header" loading="lazy" />
+      </div>
+
+      <div class="series-head">
+        <h2 class="series-title">Original artworks</h2>
+        <div class="series-subtitle">Serie 2: Interior Narratives</div>
+
+        <div class="series-text">
+          <p>
+            This series explores the studio and the domestic interior as spaces of reflection and symbolic construction.
+            Figuration is situated within spatial frameworks shaped by light and compositional tension, where artistic
+            practice, maternity, and self-representation
+            coexist.
+          </p>
+          <p>
+            Geometric interventions and the relationship between the body and interior space shape images in which
+            observation and introspection intersect, and the act of painting becomes part of a broader narrative about
+            presence, care, and identity.
+          </p>
+        </div>
+      </div>
+
+      <div class="art-grid art-grid--single">
+        <figure class="art-card art-card--single" data-lightbox-item>
+          <img src="imagini/collection/what-will-happen.png" alt="What will happen to me, will happen" loading="lazy"
+            data-lightbox-src="imagini/collection/what-will-happen.png"
+            data-lightbox-caption="What will happen to me, will happen — Watercolor on paper, 38/56cm" />
+          <figcaption>
+            <div class="art-name">What will happen to me, will happen</div>
+            <div class="art-meta">Watercolor on paper, 38/56cm</div>
+          </figcaption>
+        </figure>
+
+        <figure class="art-card art-card--single" data-lightbox-item>
+          <img src="imagini/collection/proiecte.png" alt="Proiecte" loading="lazy"
+            data-lightbox-src="imagini/collection/proiecte.png" data-lightbox-caption="Proiecte — Acrylic on canvas" />
+          <figcaption>
+            <div class="art-name">Proiecte</div>
+            <div class="art-meta">Acrylic on canvas</div>
+          </figcaption>
+        </figure>
+
+        <figure class="art-card art-card--single" data-lightbox-item>
+          <img src="imagini/collection/umbre-in-atelier.png" alt="Umbre in atelier" loading="lazy"
+            data-lightbox-src="imagini/collection/umbre-in-atelier.png"
+            data-lightbox-caption="Umbre in atelier — Acrylic on canvas, 70/80 cm" />
+          <figcaption>
+            <div class="art-name">Umbre in atelier</div>
+            <div class="art-meta">Acrylic on canvas, 70/80 cm</div>
+          </figcaption>
+        </figure>
+
+        <figure class="art-card art-card--single" data-lightbox-item>
+          <img src="imagini/collection/breath.png" alt="Breath" loading="lazy"
+            data-lightbox-src="imagini/collection/breath.png"
+            data-lightbox-caption="Breath — Acrylic on canvas, 30/40cm" />
+          <figcaption>
+            <div class="art-name">Breath</div>
+            <div class="art-meta">Acrylic on canvas, 30/40cm</div>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (identic cu restul site-ului tău dacă ai #footer pe HOME) -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="footer-welcome">
+        <div class="footer-title">Let’s keep in touch</div>
+        <div class="footer-text">
+          Original artworks • Fine art prints • Workshops
+        </div>
+      </div>
+
+      <div class="legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <span>•</span>
+        <a href="termeni.html">Terms & Conditions</a>
+      </div>
+
+      <div class="copyright">
+        © <span id="year"></span> InspirA+ Studio. All rights reserved.
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lb" hidden data-lb>
+    <div class="lb__backdrop" data-lb-close></div>
+    <div class="lb__panel" role="dialog" aria-modal="true">
+      <button class="lb__close" type="button" aria-label="Close" data-lb-close>×</button>
+      <img class="lb__img" alt="" data-lb-img />
+      <div class="lb__cap" data-lb-cap></div>
+      <button class="lb__nav lb__nav--prev" type="button" aria-label="Previous" data-lb-prev>‹</button>
+      <button class="lb__nav lb__nav--next" type="button" aria-label="Next" data-lb-next>›</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 
 </html>
