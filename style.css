@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap");
 
 /* =========================================================
-   RESET / TOKENS
+   RESET / BASE
 ========================================================= */
 *,
 *::before,
@@ -15,7 +15,7 @@
   --font-serif: "Cormorant Garamond", serif;
 
   --ink: #111111;
-  --ink-soft: rgba(17, 17, 17, 0.74);
+  --ink-soft: rgba(17, 17, 17, 0.72);
   --line: rgba(0, 0, 0, 0.12);
 
   --bg: #ffffff;
@@ -34,9 +34,6 @@
   --container: 1300px;
   --wrap: 1120px;
   --header-h: 88px;
-
-  --accent-gold-1: #d5b183;
-  --accent-gold-2: #9f6d44;
 }
 
 html {
@@ -99,7 +96,7 @@ p {
 }
 
 /* =========================================================
-   SOFT GLOBAL BACKGROUND
+   GLOBAL BACKGROUND
 ========================================================= */
 body::before,
 body::after {
@@ -189,7 +186,7 @@ body::after {
   height: 12px;
   pointer-events: none;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0));
-  opacity: 0.26;
+  opacity: 0.24;
 }
 
 #header .nav-bar {
@@ -203,8 +200,8 @@ body::after {
   gap: 12px;
 }
 
-.brand .logo,
-.logo {
+.logo,
+.brand .logo {
   width: auto;
   height: 50px;
   object-fit: contain;
@@ -236,15 +233,14 @@ body::after {
   }
 
   #header .nav-list ul li a {
-    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 11px 18px 11px 30px;
+    padding: 11px 18px;
     font-size: 1.8rem;
     font-weight: 500;
     color: var(--ink);
-    border-radius: 999px 24px 999px 24px;
+    border-radius: 999px;
     background: rgba(255, 255, 255, 0.58);
     border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
@@ -254,66 +250,21 @@ body::after {
       box-shadow 0.2s ease;
   }
 
-  #header .nav-list ul li a::before {
-    content: "";
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    width: 10px;
-    height: 10px;
-    border-radius: 2px 8px 2px 8px;
-    background: linear-gradient(
-      135deg,
-      var(--accent-gold-1),
-      var(--accent-gold-2)
-    );
-    transform: translateY(-50%) rotate(18deg);
-    box-shadow: 7px 1px 0 -2px rgba(95, 65, 40, 0.45);
-  }
-
-  #header .nav-list ul li a::after {
-    content: "";
-    position: absolute;
-    left: 14px;
-    right: 14px;
-    bottom: 7px;
-    height: 8px;
-    border-radius: 999px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(0, 0, 0, 0.08),
-      transparent
-    );
-    transform: rotate(-2deg);
-    opacity: 0;
-    transition: opacity 0.2s ease;
-  }
-
   #header .nav-list ul li a:hover {
     transform: translateY(-1px);
     background: linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.96),
+      rgba(255, 255, 255, 0.95),
       rgba(246, 241, 241, 0.9)
     );
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
   }
 
-  #header .nav-list ul li a:hover::after {
-    opacity: 1;
-  }
-
   #header .nav-list ul li a.is-active,
   #header .nav-list ul li a[aria-current="page"] {
-    background: linear-gradient(90deg, #efe4d5, #f7f1ea);
+    background: linear-gradient(90deg, #ece5df, #f8f3ee);
     border-color: rgba(0, 0, 0, 0.07);
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
-  }
-
-  #header .nav-list ul li a.is-active::after,
-  #header .nav-list ul li a[aria-current="page"]::after {
-    opacity: 1;
   }
 }
 
@@ -361,19 +312,18 @@ body::after {
   }
 
   #header .nav-list ul li a {
-    position: relative;
     width: 260px;
     min-height: 58px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding: 0 22px 0 62px;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
     font-size: 1.95rem;
-    line-height: 1;
-    text-align: left;
+    line-height: 1.1;
     font-weight: 600;
     color: var(--ink);
-    border-radius: 999px 22px 999px 22px;
+    border-radius: 999px;
     background: linear-gradient(90deg, #ffffff, #f7f1ea);
     border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
@@ -381,44 +331,6 @@ body::after {
       transform 0.2s ease,
       box-shadow 0.2s ease,
       background 0.2s ease;
-  }
-
-  #header .nav-list ul li a::before {
-    content: "";
-    position: absolute;
-    left: 22px;
-    top: 50%;
-    width: 18px;
-    height: 8px;
-    border-radius: 6px 12px 6px 12px;
-    background: linear-gradient(
-      135deg,
-      var(--accent-gold-1),
-      var(--accent-gold-2)
-    );
-    transform: translateY(-50%) rotate(-24deg);
-    box-shadow:
-      11px 2px 0 -4px rgba(88, 61, 38, 0.55),
-      14px 2px 0 -5px rgba(88, 61, 38, 0.28);
-    opacity: 0.95;
-  }
-
-  #header .nav-list ul li a::after {
-    content: "";
-    position: absolute;
-    left: 18px;
-    right: 18px;
-    bottom: 7px;
-    height: 8px;
-    border-radius: 999px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(0, 0, 0, 0.06),
-      transparent
-    );
-    transform: rotate(-2deg);
-    opacity: 0.6;
   }
 
   #header .nav-list ul li a:hover,
@@ -509,8 +421,8 @@ body::after {
     --header-h: 92px;
   }
 
-  .brand .logo,
-  .logo {
+  .logo,
+  .brand .logo {
     height: 40px;
   }
 
@@ -803,53 +715,15 @@ body::after {
 }
 
 #newsletter-popup button {
-  position: relative;
-  overflow: hidden;
-  padding: 13px 28px 13px 44px;
+  padding: 13px 28px;
   border: none;
-  border-radius: 999px 24px 999px 24px;
+  border-radius: 999px;
   background: linear-gradient(90deg, #111 0%, #2c2c2c 100%);
   color: #fff;
   font-size: 1.4rem;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
-}
-
-#newsletter-popup button::before {
-  content: "";
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  width: 16px;
-  height: 7px;
-  border-radius: 6px 12px 6px 12px;
-  background: linear-gradient(
-    135deg,
-    var(--accent-gold-1),
-    var(--accent-gold-2)
-  );
-  transform: translateY(-50%) rotate(-24deg);
-  box-shadow:
-    10px 2px 0 -4px rgba(88, 61, 38, 0.6),
-    13px 2px 0 -5px rgba(88, 61, 38, 0.3);
-}
-
-#newsletter-popup button::after {
-  content: "";
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 8px;
-  height: 9px;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.22),
-    transparent
-  );
-  transform: rotate(-2deg);
 }
 
 #newsletter-popup button:hover {
@@ -965,40 +839,40 @@ body::after {
 }
 
 .about-main {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) minmax(280px, 1fr);
   align-items: center;
-  justify-content: center;
-  gap: 56px;
-  flex-wrap: wrap;
+  gap: 46px;
 }
 
 .about-media {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
 .main-img {
-  width: 360px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
   border-radius: 4px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
 }
 
 .about-text {
+  width: 100%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  flex: 1 1 320px;
-  max-width: 560px;
+  gap: 18px;
 }
 
 .about-text p {
   margin: 0;
   font-size: 1.5rem;
-  line-height: 1.95;
+  line-height: 2;
   font-weight: 400;
   opacity: 0.92;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .art-row {
@@ -1188,6 +1062,11 @@ body::after {
     font-size: 4.6rem;
   }
 
+  .about-main {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
   .art-row {
     flex-direction: column;
     align-items: flex-start;
@@ -1213,18 +1092,8 @@ body::after {
     font-size: 2.8rem;
   }
 
-  .about-main {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-  }
-
   .main-img {
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto;
-    max-height: 52vh;
-    object-fit: cover;
+    max-width: 100%;
   }
 
   .art-images img {
@@ -1262,6 +1131,11 @@ body::after {
 
   .quote-text {
     font-size: 2.4rem;
+  }
+
+  .about-text p {
+    font-size: 1.45rem;
+    line-height: 1.95;
   }
 }
 
@@ -1658,7 +1532,7 @@ body::after {
 }
 
 /* =========================================================
-   GENERIC SIMPLE PAGES
+   SIMPLE PAGES
 ========================================================= */
 .page-section,
 .simple-page,
