@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap");
 
 /* =========================================================
-   RESET / BASE
+   RESET / TOKENS
 ========================================================= */
 *,
 *::before,
@@ -15,7 +15,7 @@
   --font-serif: "Cormorant Garamond", serif;
 
   --ink: #111111;
-  --ink-soft: rgba(17, 17, 17, 0.76);
+  --ink-soft: rgba(17, 17, 17, 0.74);
   --line: rgba(0, 0, 0, 0.12);
 
   --bg: #ffffff;
@@ -25,7 +25,7 @@
 
   --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.08);
   --shadow-medium: 0 16px 40px rgba(0, 0, 0, 0.1);
-  --shadow-strong: 0 22px 60px rgba(0, 0, 0, 0.18);
+  --shadow-strong: 0 24px 60px rgba(0, 0, 0, 0.16);
 
   --radius-sm: 10px;
   --radius-md: 18px;
@@ -34,6 +34,9 @@
   --container: 1300px;
   --wrap: 1120px;
   --header-h: 88px;
+
+  --accent-gold-1: #d5b183;
+  --accent-gold-2: #9f6d44;
 }
 
 html {
@@ -96,7 +99,7 @@ p {
 }
 
 /* =========================================================
-   GLOBAL SOFT BACKGROUND
+   SOFT GLOBAL BACKGROUND
 ========================================================= */
 body::before,
 body::after {
@@ -124,7 +127,6 @@ body::before {
       transparent 60%
     ),
     linear-gradient(135deg, #ffffff, #fbfbfb 50%, #f3f3f3);
-  opacity: 1;
 }
 
 body::after {
@@ -148,13 +150,13 @@ body::after {
 #header {
   position: fixed;
   inset: 0 0 auto 0;
-  z-index: 9999;
   width: 100%;
+  z-index: 9999;
 }
 
 #header .header {
-  min-height: var(--header-h);
   width: 100%;
+  min-height: var(--header-h);
   position: relative;
   background: radial-gradient(
       900px 260px at 18% 30%,
@@ -187,14 +189,14 @@ body::after {
   height: 12px;
   pointer-events: none;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0));
-  opacity: 0.25;
+  opacity: 0.26;
 }
 
 #header .nav-bar {
   max-width: var(--container);
+  min-height: var(--header-h);
   margin: 0 auto;
   padding: 10px 16px;
-  min-height: var(--header-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -203,8 +205,8 @@ body::after {
 
 .brand .logo,
 .logo {
-  height: 50px;
   width: auto;
+  height: 50px;
   object-fit: contain;
 }
 
@@ -214,9 +216,9 @@ body::after {
   padding: 0;
 }
 
-/* =========================
+/* =========================================================
    DESKTOP NAV
-========================= */
+========================================================= */
 @media (min-width: 992px) {
   #header .hamburger {
     display: none !important;
@@ -224,50 +226,78 @@ body::after {
 
   #header .nav-list ul {
     position: static !important;
+    width: auto !important;
+    height: auto !important;
     display: flex !important;
     align-items: center !important;
     justify-content: flex-end !important;
-    gap: 8px !important;
-    width: auto !important;
-    height: auto !important;
+    gap: 10px !important;
     background: transparent !important;
   }
 
   #header .nav-list ul li a {
-    font-size: 1.8rem;
-    color: var(--ink);
-    padding: 10px 12px;
-    border-radius: 999px;
-    font-weight: 500;
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 18px 11px 30px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--ink);
+    border-radius: 999px 24px 999px 24px;
+    background: rgba(255, 255, 255, 0.58);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
     transition:
       background-color 0.2s ease,
       transform 0.2s ease,
-      color 0.2s ease;
+      box-shadow 0.2s ease;
+  }
+
+  #header .nav-list ul li a::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px 8px 2px 8px;
+    background: linear-gradient(
+      135deg,
+      var(--accent-gold-1),
+      var(--accent-gold-2)
+    );
+    transform: translateY(-50%) rotate(18deg);
+    box-shadow: 7px 1px 0 -2px rgba(95, 65, 40, 0.45);
   }
 
   #header .nav-list ul li a::after {
     content: "";
     position: absolute;
-    left: 10px;
-    right: 10px;
-    bottom: 6px;
-    height: 10px;
+    left: 14px;
+    right: 14px;
+    bottom: 7px;
+    height: 8px;
     border-radius: 999px;
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.08),
       transparent
     );
-    opacity: 0;
     transform: rotate(-2deg);
+    opacity: 0;
     transition: opacity 0.2s ease;
   }
 
   #header .nav-list ul li a:hover {
-    background: rgba(213, 210, 210, 0.55);
     transform: translateY(-1px);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(246, 241, 241, 0.9)
+    );
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
   }
 
   #header .nav-list ul li a:hover::after {
@@ -276,8 +306,9 @@ body::after {
 
   #header .nav-list ul li a.is-active,
   #header .nav-list ul li a[aria-current="page"] {
-    background: rgba(205, 203, 203, 0.72);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: linear-gradient(90deg, #efe4d5, #f7f1ea);
+    border-color: rgba(0, 0, 0, 0.07);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
   }
 
   #header .nav-list ul li a.is-active::after,
@@ -286,9 +317,9 @@ body::after {
   }
 }
 
-/* =========================
+/* =========================================================
    MOBILE NAV
-========================= */
+========================================================= */
 @media (max-width: 991px) {
   #header .nav-list ul {
     position: fixed;
@@ -301,6 +332,7 @@ body::after {
     justify-content: center;
     align-items: center;
     gap: 14px;
+    padding: 120px 20px 40px;
     transition: left 0.45s ease;
     background: radial-gradient(
         1000px 320px at 20% 25%,
@@ -322,20 +354,78 @@ body::after {
     left: 0;
   }
 
+  #header .nav-list ul li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   #header .nav-list ul li a {
-    font-size: 2.1rem;
-    color: var(--ink);
-    padding: 12px 20px;
-    border-radius: 999px;
+    position: relative;
+    width: 260px;
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 22px 0 62px;
+    font-size: 1.95rem;
+    line-height: 1;
+    text-align: left;
     font-weight: 600;
-    background: rgba(255, 255, 255, 0.88);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
+    color: var(--ink);
+    border-radius: 999px 22px 999px 22px;
+    background: linear-gradient(90deg, #ffffff, #f7f1ea);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+
+  #header .nav-list ul li a::before {
+    content: "";
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    width: 18px;
+    height: 8px;
+    border-radius: 6px 12px 6px 12px;
+    background: linear-gradient(
+      135deg,
+      var(--accent-gold-1),
+      var(--accent-gold-2)
+    );
+    transform: translateY(-50%) rotate(-24deg);
+    box-shadow:
+      11px 2px 0 -4px rgba(88, 61, 38, 0.55),
+      14px 2px 0 -5px rgba(88, 61, 38, 0.28);
+    opacity: 0.95;
+  }
+
+  #header .nav-list ul li a::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 7px;
+    height: 8px;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 0, 0, 0.06),
+      transparent
+    );
+    transform: rotate(-2deg);
+    opacity: 0.6;
   }
 
   #header .nav-list ul li a:hover,
   #header .nav-list ul li a.is-active {
     transform: translateY(-1px);
+    background: linear-gradient(90deg, #ffffff, #f4ede5);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.09);
   }
 
   #header .hamburger {
@@ -349,7 +439,7 @@ body::after {
     justify-content: center;
     z-index: 9999;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.68);
     transform: scale(0.92);
   }
 
@@ -713,31 +803,58 @@ body::after {
 }
 
 #newsletter-popup button {
-  padding: 12px 30px;
+  position: relative;
+  overflow: hidden;
+  padding: 13px 28px 13px 44px;
   border: none;
-  border-radius: 10px;
-  background: #111;
+  border-radius: 999px 24px 999px 24px;
+  background: linear-gradient(90deg, #111 0%, #2c2c2c 100%);
   color: #fff;
   font-size: 1.4rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  animation: popupPulse 2s infinite;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+#newsletter-popup button::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  width: 16px;
+  height: 7px;
+  border-radius: 6px 12px 6px 12px;
+  background: linear-gradient(
+    135deg,
+    var(--accent-gold-1),
+    var(--accent-gold-2)
+  );
+  transform: translateY(-50%) rotate(-24deg);
+  box-shadow:
+    10px 2px 0 -4px rgba(88, 61, 38, 0.6),
+    13px 2px 0 -5px rgba(88, 61, 38, 0.3);
+}
+
+#newsletter-popup button::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 8px;
+  height: 9px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.22),
+    transparent
+  );
+  transform: rotate(-2deg);
 }
 
 #newsletter-popup button:hover {
-  background: #222;
-}
-
-@keyframes popupPulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.04);
-  }
-  100% {
-    transform: scale(1);
-  }
+  transform: translateY(-1px);
+  background: linear-gradient(90deg, #171717 0%, #353535 100%);
 }
 
 #newsletter-popup .social-icons {
@@ -789,20 +906,20 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   font-family: var(--font-serif);
   font-size: 1.8rem;
   opacity: 0.88;
-  gap: 16px;
 }
 
 .big-title {
   width: 100%;
+  margin: 12px 0 26px;
   text-align: left;
   font-family: var(--font-serif);
   font-size: 6.8rem;
   line-height: 1;
   letter-spacing: 0.04em;
-  margin: 12px 0 26px;
   position: relative;
 }
 
@@ -824,18 +941,18 @@ body::after {
 }
 
 .section-title {
+  margin: 0 0 18px;
   font-family: var(--font-serif);
   font-size: 4.8rem;
   line-height: 1.05;
-  margin: 0 0 18px;
 }
 
 .big-subtitle {
+  margin: 0;
   font-family: var(--font-serif);
   font-size: 5.4rem;
   line-height: 1.04;
   letter-spacing: 0.02em;
-  margin: 0;
 }
 
 .about-section,
@@ -864,7 +981,6 @@ body::after {
 .main-img {
   width: 360px;
   max-width: 100%;
-  height: auto;
   border-radius: 4px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
 }
@@ -885,7 +1001,6 @@ body::after {
   opacity: 0.92;
 }
 
-/* ART SECTION */
 .art-row {
   display: flex;
   align-items: flex-end;
@@ -914,12 +1029,10 @@ body::after {
 .art-images img {
   width: 240px;
   max-width: 100%;
-  height: auto;
   border-radius: 4px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* CREDENTIALS */
 .cred-content {
   display: flex;
   align-items: center;
@@ -953,12 +1066,10 @@ body::after {
 .cred-media img {
   width: 340px;
   max-width: 100%;
-  height: auto;
   border-radius: 4px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* QUOTE */
 .quote-section .wrap {
   display: flex;
   flex-direction: column;
@@ -966,21 +1077,19 @@ body::after {
 }
 
 .quote-text {
+  margin: 0;
   font-family: var(--font-serif);
   font-size: 3.2rem;
   line-height: 1.25;
   font-weight: 300;
-  margin: 0;
 }
 
 .quote-section img {
   width: 100%;
-  height: auto;
   border-radius: 6px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* RECENT */
 .recent-grid {
   display: flex;
   align-items: flex-start;
@@ -1000,7 +1109,6 @@ body::after {
 .recent-card img {
   width: 270px;
   max-width: 100%;
-  height: auto;
   border-radius: 4px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
 }
@@ -1012,7 +1120,6 @@ body::after {
   text-align: center;
 }
 
-/* COLLAB */
 .collab-row {
   display: flex;
   align-items: center;
@@ -1030,25 +1137,25 @@ body::after {
 }
 
 .small-top {
+  margin: 0;
   font-family: var(--font-serif);
   font-size: 1.8rem;
   opacity: 0.82;
-  margin: 0;
 }
 
 .collab-title {
+  margin: 0;
   font-family: var(--font-serif);
   font-size: 5.5rem;
   line-height: 1;
-  margin: 0;
 }
 
 .desc {
   max-width: 520px;
+  margin: 0;
   font-size: 1.4rem;
   line-height: 1.9;
   opacity: 0.92;
-  margin: 0;
 }
 
 .collab-right {
@@ -1060,7 +1167,6 @@ body::after {
 .collab-right img {
   width: 360px;
   max-width: 100%;
-  height: auto;
   border-radius: 6px;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
 }
@@ -1174,10 +1280,7 @@ body::after {
   padding: 0 0 70px;
 }
 
-.collection-video {
-  width: 100%;
-}
-
+.collection-video,
 .collection-video__card,
 .collection-video__media {
   width: 100%;
@@ -1194,12 +1297,12 @@ body::after {
   width: 100%;
 }
 
-.series-hero {
+.series-hero,
+.series-hero__img {
   width: 100%;
 }
 
 .series-hero__img {
-  width: 100%;
   display: block;
   height: auto;
   object-fit: cover;
@@ -1462,7 +1565,6 @@ body::after {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: none;
   opacity: 0.98;
   transition:
     transform 0.3s ease,
@@ -1480,17 +1582,17 @@ body::after {
 }
 
 #contact .contact-info h1 {
+  margin: 0 0 5px;
   font-size: 1.8rem;
   color: #111;
-  margin: 0 0 5px;
   text-transform: uppercase;
 }
 
 #contact .contact-info h2 {
-  font-size: 1.4rem;
-  color: rgba(17, 17, 17, 0.7);
   margin: 3px 0;
+  font-size: 1.4rem;
   font-weight: 400;
+  color: rgba(17, 17, 17, 0.7);
 }
 
 #contact .contact-info h2 a:hover {
@@ -1556,7 +1658,7 @@ body::after {
 }
 
 /* =========================================================
-   GENERIC PAGES: COURSES / WORKSHOPS / LEGAL
+   GENERIC SIMPLE PAGES
 ========================================================= */
 .page-section,
 .simple-page,
@@ -1571,26 +1673,26 @@ body::after {
 }
 
 .page-title {
+  margin: 0 0 18px;
   font-family: var(--font-serif);
   font-size: clamp(3.8rem, 6vw, 6rem);
   line-height: 1;
-  margin: 0 0 18px;
 }
 
 .page-subtitle {
+  margin: 0 0 30px;
+  max-width: 75ch;
   font-size: 1.7rem;
   line-height: 1.8;
   color: var(--ink-soft);
-  max-width: 75ch;
-  margin: 0 0 30px;
 }
 
 .page-card {
+  padding: 22px 20px;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
-  padding: 22px 20px;
 }
 
 .page-card p + p {
@@ -1745,10 +1847,10 @@ body::after {
 }
 
 .footer-title {
+  margin: 0 0 12px;
   font-size: 1.6rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin: 0 0 12px;
   color: #fff;
   position: relative;
 }
@@ -1767,14 +1869,13 @@ body::after {
     transparent
   );
   transform: rotate(-2deg);
-  opacity: 1;
 }
 
 .footer-text {
+  margin: 0 0 12px;
   color: rgba(255, 255, 255, 0.95);
   font-size: 1.4rem;
   line-height: 2.4rem;
-  margin: 0 0 12px;
 }
 
 #footer .social-icons {
