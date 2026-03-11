@@ -5,14 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About – Xenia Botea</title>
-
     <link rel="icon" type="image/png" href="imagini/cropped-fav.png" />
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <!-- ================= HEADER ================= -->
     <section id="header">
         <div class="header">
             <div class="nav-bar container">
@@ -29,20 +26,25 @@
 
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html" class="is-active">About me</a></li>
-                        <li><a href="collection.html">Collection</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="workshops.html">Workshops</a></li>
+                        <li><a href="about.html">About me</a></li>
+
+                        <li class="has-submenu">
+                            <button class="submenu-toggle" type="button">Collection</button>
+                            <div class="submenu">
+                                <a href="collection.html">All Collection</a>
+                                <a href="collection.html#series-1">Series 1: Identity</a>
+                                <a href="collection.html#series-2">Series 2: Interior Narratives</a>
+                            </div>
+                        </li>
+
+                        <li><a href="courses.html">Courses &amp; Workshops</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </section>
-    <!-- ================= END HEADER ================= -->
 
-    <!-- ================= TOP BAR ================= -->
     <div class="top-bar">
         <div class="wrap">
             <span>Xenia Botea</span>
@@ -156,7 +158,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <section id="footer">
         <div class="footer container">
             <div class="brand">
@@ -193,7 +194,7 @@
                 </a>
             </div>
 
-            <p class="copyright">© 2026 | All rights reserved InspirA+</p>
+            <p class="copyright">© <span id="year"></span> | All rights reserved InspirA+</p>
             <div class="legal">
                 <a href="termeni.html">Terms &amp; Conditions</a>
                 <span>|</span>

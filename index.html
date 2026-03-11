@@ -4,49 +4,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- SEO Basic -->
     <title>InspirA+ | Artist Xenia Botea | Original Art & Workshops</title>
 
     <meta name="description"
         content="Original artworks, fine art prints and workshops by artist Xenia Botea. Discover InspirA+ Studio." />
-
     <meta name="keywords"
         content="Xenia Botea, InspirA+, artist Romania, fine art, painting, art workshops, original artwork" />
-
     <meta name="robots" content="index, follow" />
 
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://corina-ionelia.github.io/InspirArt-/" />
-
-    <!-- Open Graph (Facebook / WhatsApp) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="InspirA+ | Xenia Botea" />
-    <meta property="og:description"
-        content="Original artworks, fine art prints, workshops & courses by Xenia Botea (InspirA+ Studio)." />
-    <meta property="og:url" content="https://corina-ionelia.github.io/InspirArt-/" />
-    <meta property="og:image" content="https://corina-ionelia.github.io/InspirArt-/imagini/og-cover.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="InspirA+ | Xenia Botea" />
-    <meta name="twitter:description"
-        content="Original artworks, fine art prints, workshops & courses by Xenia Botea (InspirA+ Studio)." />
-    <meta name="twitter:image" content="https://corina-ionelia.github.io/InspirArt-/imagini/og-cover.jpg" />
-
-    <!-- Icons -->
     <link rel="icon" href="imagini/cropped-fav.png" />
     <link rel="apple-touch-icon" href="imagini/apple-touch-icon.png" />
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
     <section id="header">
         <div class="header">
             <div class="nav-bar container">
@@ -64,18 +37,24 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About me</a></li>
-                        <li><a href="collection.html">Collection</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="workshops.html">Workshops</a></li>
+
+                        <li class="has-submenu">
+                            <button class="submenu-toggle" type="button">Collection</button>
+                            <div class="submenu">
+                                <a href="collection.html">All Collection</a>
+                                <a href="collection.html#series-1">Series 1: Identity</a>
+                                <a href="collection.html#series-2">Series 2: Interior Narratives</a>
+                            </div>
+                        </li>
+
+                        <li><a href="courses.html">Courses &amp; Workshops</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ================= END HEADER ================= -->
 
-    <!-- ================= HERO ================= -->
     <section id="hero" class="hero-clean">
         <div class="hero hero-v2 container">
 
@@ -123,9 +102,7 @@
 
         </div>
     </section>
-    <!-- ================= END HERO ================= -->
 
-    <!-- ================= NEWSLETTER POPUP ================= -->
     <div id="newsletter-popup">
         <div class="popup-content">
             <span class="close-btn" aria-label="Close popup">&times;</span>
@@ -153,9 +130,7 @@
             </div>
         </div>
     </div>
-    <!-- ================= END NEWSLETTER POPUP ================= -->
 
-    <!-- Footer -->
     <section id="footer">
         <div class="footer container">
             <div class="brand">
@@ -164,16 +139,11 @@
 
             <div class="footer-welcome">
                 <h3 class="footer-title">WELCOME!</h3>
-
-                <p class="footer-text">
-                    Hi! Welcome to my world! I’m artist Xenia Botea.
-                </p>
-
+                <p class="footer-text">Hi! Welcome to my world! I’m artist Xenia Botea.</p>
                 <p class="footer-text">
                     Here you will find my original artworks, fine art prints and workshops. My art comes to life in many
                     different ways. I hope you’ll enjoy your time here, and thank you for collecting.
                 </p>
-
                 <p class="footer-text">
                     If you’d like to connect with me, feel free to drop me an email or follow me on social media. I’d
                     love to hear from you!
@@ -199,7 +169,7 @@
                 </a>
             </div>
 
-            <p class="copyright">© 2026 | All rights reserved InspirA+</p>
+            <p class="copyright">© <span id="year"></span> | All rights reserved InspirA+</p>
             <div class="legal">
                 <a href="termeni.html">Terms &amp; Conditions</a>
                 <span>|</span>

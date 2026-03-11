@@ -2,137 +2,147 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms & Conditions - InspirA+</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            background-color: #000;
-            color: rgb(0, 0, 0);
-            font-family: 'Montserrat', sans-serif;
-            padding: 80px 50px;
-        }
-
-        .container-terms {
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        h1,
-        h2 {
-            color: #eb00ff;
-            text-transform: uppercase;
-            margin-top: 40px;
-        }
-
-        .back-link {
-            display: inline-block;
-            padding: 12px 22px;
-            font-size: 16px;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            color: #111;
-            text-decoration: none;
-            background: rgba(231, 233, 219, 0.897);
-            border-radius: 999px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .back-link::after {
-            content: "";
-            position: absolute;
-            left: 12%;
-            right: 12%;
-            bottom: 6px;
-            height: 10px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, transparent, rgba(255, 72, 218, 0.6), transparent);
-            opacity: 0.35;
-            transform: rotate(-2deg);
-            transition: opacity 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #ff48da;
-            transform: translateY(-2px);
-        }
-
-        .back-link:hover::after {
-            opacity: 0.6;
-        }
-
-        p,
-        li {
-            font-size: 2rem;
-            color: #000000e0;
-        }
-
-        strong {
-            color: #000;
-            font-weight: 700;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms & Conditions – InspirA+</title>
+    <meta name="description" content="Terms and Conditions for InspirA+ website." />
+    <link rel="icon" type="image/png" href="imagini/cropped-fav.png" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <div class="container-terms">
-        <a href="index.html" class="back-link">← Back to Home</a>
 
-        <h1>Terms & Conditions</h1>
+    <section id="header">
+        <div class="header">
+            <div class="nav-bar container">
+                <div class="brand">
+                    <a href="index.html" aria-label="Home">
+                        <img src="imagini/logo.svg" alt="InspirA+ Logo" class="logo" />
+                    </a>
+                </div>
 
-        <h2>1. General</h2>
-        <p>
-            This website provides information about the artist <strong>Xenia Botea</strong>, her original artworks,
-            prints, commissions, workshops, and art courses. By accessing and using this website, you agree to the
-            following terms and conditions.
-        </p>
+                <div class="nav-list">
+                    <div class="hamburger" aria-label="Open menu" aria-expanded="false" role="button" tabindex="0">
+                        <div class="bar"></div>
+                    </div>
 
-        <h2>2. Orders, Commissions & Workshops</h2>
-        <ul>
-            <li>Original commissioned artworks and workshop registrations are secured with an advance payment.</li>
-            <li>Physical prints are produced on demand after payment confirmation.</li>
-            <li>The purchase of an original artwork transfers ownership of the physical piece only. Copyright and
-                reproduction rights remain the exclusive property of the artist.</li>
-            <li>The artist reserves the right to reproduce the artwork in the form of prints, limited editions, or other
-                formats for artistic or commercial purposes.</li>
-            <li>Public display of purchased artworks is permitted. Any commercial reproduction requires prior written
-                consent from the artist.</li>
-        </ul>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About me</a></li>
 
-        <h2>3. Prints</h2>
-        <p>
-            Purchasing a print grants ownership of the physical object only, not the image itself. Prints may not be
-            copied, scanned, digitally distributed, or used for commercial purposes without the artist’s written
-            permission.
-        </p>
+                        <li class="has-submenu">
+                            <button class="submenu-toggle" type="button">Collection</button>
+                            <div class="submenu">
+                                <a href="collection.html">All Collection</a>
+                                <a href="collection.html#series-1">Series 1: Identity</a>
+                                <a href="collection.html#series-2">Series 2: Interior Narratives</a>
+                            </div>
+                        </li>
 
-        <h2>4. Copyright</h2>
-        <p>
-            All artworks are protected under international copyright laws. Unauthorized reproduction, distribution, or
-            resale of digital or physical works is strictly prohibited.
-        </p>
+                        <li><a href="courses.html">Courses &amp; Workshops</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h2>5. Personal Data</h2>
-        <p>
-            Personal information provided during orders or communication is collected solely for processing orders,
-            delivery, and customer communication. Data is not sold or shared with third parties except when necessary
-            for delivery services.
-        </p>
+    <main class="legal-page">
+        <div class="wrap">
+            <h1 class="page-title">Terms &amp; Conditions</h1>
+            <p class="page-subtitle">
+                By accessing and using this website, you agree to the following general terms.
+            </p>
 
-        <h2>6. Contact</h2>
-        <p>
-            For any questions regarding these terms, please contact the artist via WhatsApp or email.
-        </p>
+            <div class="page-card">
+                <p><strong>1. Website purpose</strong></p>
+                <p>This website is intended to present original artworks, artistic projects, fine art prints, courses,
+                    workshops, and other creative activities related to InspirA+ and Xenia Botea.</p>
 
-        <p style="margin-top: 40px; font-size: 1.4rem; color: #000000a6;">
-            Last updated: February 2026
-        </p>
+                <p><strong>2. Intellectual property</strong></p>
+                <p>All texts, images, videos, artworks, graphics, and design elements displayed on this website belong
+                    to their rightful owner and may not be copied, reproduced, distributed, or used without permission.
+                </p>
 
-    </div>
+                <p><strong>3. Informational content</strong></p>
+                <p>The information published on the site is provided for presentation purposes and may be updated,
+                    modified, or removed without prior notice.</p>
+
+                <p><strong>4. External platforms</strong></p>
+                <p>This website may include links to external platforms such as social media, email services, WhatsApp,
+                    or maps. We are not responsible for the content or policies of those external services.</p>
+
+                <p><strong>5. Contact and requests</strong></p>
+                <p>Messages sent through contact channels do not automatically create a contractual obligation. Any
+                    collaboration, commission, course, or workshop arrangement will be confirmed separately.</p>
+
+                <p><strong>6. Limitation of liability</strong></p>
+                <p>We make reasonable efforts to keep the site accurate and available, but we do not guarantee that the
+                    website will always be free from interruptions, errors, or technical limitations.</p>
+
+                <p><strong>7. Changes</strong></p>
+                <p>These terms may be updated at any time, depending on website development or service changes.</p>
+
+                <p><strong>8. Contact</strong></p>
+                <p>For any questions regarding these terms, please contact: <a
+                        href="mailto:inspiraplus@gmail.com">inspiraplus@gmail.com</a></p>
+            </div>
+        </div>
+    </main>
+
+    <section id="footer">
+        <div class="footer container">
+            <div class="brand">
+                <h1><span>X</span>enia <span>B</span>otea</h1>
+            </div>
+
+            <div class="footer-welcome">
+                <h3 class="footer-title">WELCOME!</h3>
+                <p class="footer-text">Hi! Welcome to my world! I’m artist Xenia Botea.</p>
+                <p class="footer-text">
+                    Here you will find my original artworks, fine art prints and workshops. My art comes to life in many
+                    different ways. I hope you’ll enjoy your time here, and thank you for collecting.
+                </p>
+                <p class="footer-text">
+                    If you’d like to connect with me, feel free to drop me an email or follow me on social media. I’d
+                    love to hear from you!
+                </p>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/inspiraplus.ro/" target="_blank" rel="noopener">
+                    <img src="https://img.icons8.com/fluency/48/facebook-new.png" alt="Facebook" />
+                </a>
+                <a href="https://www.instagram.com/inspiraplus.ro/" target="_blank" rel="noopener">
+                    <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram" />
+                </a>
+                <a href="https://www.tiktok.com/@inspiraplus.ro" target="_blank" rel="noopener">
+                    <img src="https://img.icons8.com/color/48/tiktok--v1.png" alt="TikTok" />
+                </a>
+                <a href="https://wa.me/40758312756" target="_blank" rel="noopener">
+                    <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" />
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Strada+Universitatii+3+Galati" target="_blank"
+                    rel="noopener">
+                    <img src="https://img.icons8.com/fluency/48/000000/google-maps-new.png" alt="Google Maps" />
+                </a>
+            </div>
+
+            <p class="copyright">© <span id="year"></span> | All rights reserved InspirA+</p>
+            <div class="legal">
+                <a href="termeni.html">Terms &amp; Conditions</a>
+                <span>|</span>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+
+    <a href="https://wa.me/40758312756" target="_blank" rel="noopener" class="whatsapp-float">
+        <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" />
+    </a>
+
 </body>
 
 </html>

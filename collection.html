@@ -19,19 +19,11 @@
 
   <link rel="icon" href="imagini/cropped-fav.png" />
   <link rel="apple-touch-icon" href="imagini/apple-touch-icon.png" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500;600&display=swap"
-    rel="stylesheet" />
-
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="collection-page">
 
-  <!-- ================= HEADER ================= -->
   <section id="header">
     <div class="header">
       <div class="nav-bar container">
@@ -49,30 +41,38 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About me</a></li>
-            <li><a href="collection.html">Collection</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="workshops.html">Workshops</a></li>
+
+            <li class="has-submenu">
+              <button class="submenu-toggle" type="button">Collection</button>
+              <div class="submenu">
+                <a href="collection.html">All Collection</a>
+                <a href="collection.html#series-1">Series 1: Identity</a>
+                <a href="collection.html#series-2">Series 2: Interior Narratives</a>
+              </div>
+            </li>
+
+            <li><a href="courses.html">Courses &amp; Workshops</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
-  <!-- ================= END HEADER ================= -->
 
   <main class="collection-wrap">
 
-    <!-- VIDEO -->
     <section class="collection-video">
       <div class="collection-video__card">
-        <video class="collection-video__media" src="imagini/collection/xenia-video.mp4" controls playsinline
-          preload="metadata"></video>
+        <video class="collection-video__media" src="imagini/collection/xenia-video.mp4" autoplay muted loop playsinline
+          preload="auto">
+        </video>
       </div>
     </section>
 
-    <!-- SERIES 1 -->
     <section class="series series--one" id="series-1">
-
+      <div class="series-hero">
+        <img class="series-hero__img" src="imagini/collection/hero-identity.jpg" alt="Series 1 header" loading="lazy" />
+      </div>
 
       <div class="series-head">
         <h1 class="series-title">Original Artworks</h1>
@@ -101,7 +101,7 @@
 
       <div class="art-grid art-grid--two">
         <figure class="art-card" data-lightbox-item>
-          <img src="imagini/collection/dezlegare.png" alt="Dezlegare" loading="lazy"
+          <img src="imagini/collection/dezlegare.png" alt="Dezlegare"
             data-lightbox-src="imagini/collection/dezlegare.png"
             data-lightbox-caption="Dezlegare — Acrylic on canvas, 30 - 40 cm" />
           <figcaption>
@@ -111,8 +111,7 @@
         </figure>
 
         <figure class="art-card" data-lightbox-item>
-          <img src="imagini/collection/capriciu.png" alt="Capriciu" loading="lazy"
-            data-lightbox-src="imagini/collection/capriciu.png"
+          <img src="imagini/collection/capriciu.png" alt="Capriciu" data-lightbox-src="imagini/collection/capriciu.png"
             data-lightbox-caption="Capriciu — Acrylic on canvas, 24 - 50 cm" />
           <figcaption>
             <div class="art-name">Capriciu</div>
@@ -121,8 +120,7 @@
         </figure>
 
         <figure class="art-card" data-lightbox-item>
-          <img src="imagini/collection/stres.png" alt="Stres" loading="lazy"
-            data-lightbox-src="imagini/collection/stres.png"
+          <img src="imagini/collection/stres.png" alt="Stres" data-lightbox-src="imagini/collection/stres.png"
             data-lightbox-caption="Stres — Acrylic on canvas, 50 - 50 cm" />
           <figcaption>
             <div class="art-name">Stres</div>
@@ -131,8 +129,7 @@
         </figure>
 
         <figure class="art-card" data-lightbox-item>
-          <img src="imagini/collection/matern.png" alt="Matern" loading="lazy"
-            data-lightbox-src="imagini/collection/matern.png"
+          <img src="imagini/collection/matern.png" alt="Matern" data-lightbox-src="imagini/collection/matern.png"
             data-lightbox-caption="Matern — Acrylic on canvas, 40 - 40 cm" />
           <figcaption>
             <div class="art-name">Matern</div>
@@ -141,7 +138,7 @@
         </figure>
 
         <figure class="art-card" data-lightbox-item>
-          <img src="imagini/collection/figuri-pe-burta-goala.png" alt="Figuri pe burta goala" loading="lazy"
+          <img src="imagini/collection/figuri-pe-burta-goala.png" alt="Figuri pe burta goala"
             data-lightbox-src="imagini/collection/figuri-pe-burta-goala.png"
             data-lightbox-caption="Figuri pe burta goala — Acrylic on canvas, 24 - 60 cm" />
           <figcaption>
@@ -151,8 +148,7 @@
         </figure>
 
         <figure class="art-card" data-lightbox-item>
-          <img src="imagini/collection/atelier.png" alt="Atelier" loading="lazy"
-            data-lightbox-src="imagini/collection/atelier.png"
+          <img src="imagini/collection/atelier.png" alt="Atelier" data-lightbox-src="imagini/collection/atelier.png"
             data-lightbox-caption="Atelier — Acrylic on canvas, 70 - 100 cm" />
           <figcaption>
             <div class="art-name">Atelier</div>
@@ -161,7 +157,7 @@
         </figure>
 
         <figure class="art-card" data-lightbox-item>
-          <img src="imagini/collection/gura-lumii.png" alt="Gura lumii" loading="lazy"
+          <img src="imagini/collection/gura-lumii.png" alt="Gura lumii"
             data-lightbox-src="imagini/collection/gura-lumii.png"
             data-lightbox-caption="Gura lumii — Acrylic on canvas, 50 - 30 cm" />
           <figcaption>
@@ -171,8 +167,7 @@
         </figure>
 
         <figure class="art-card" data-lightbox-item>
-          <img src="imagini/collection/viciu.png" alt="Viciu" loading="lazy"
-            data-lightbox-src="imagini/collection/viciu.png"
+          <img src="imagini/collection/viciu.png" alt="Viciu" data-lightbox-src="imagini/collection/viciu.png"
             data-lightbox-caption="Viciu — Acrylic on canvas, 50 - 40 cm" />
           <figcaption>
             <div class="art-name">Viciu</div>
@@ -181,8 +176,7 @@
         </figure>
 
         <figure class="art-card" data-lightbox-item>
-          <img src="imagini/collection/trendul.png" alt="Trendul" loading="lazy"
-            data-lightbox-src="imagini/collection/trendul.png"
+          <img src="imagini/collection/trendul.png" alt="Trendul" data-lightbox-src="imagini/collection/trendul.png"
             data-lightbox-caption="Trendul — Acrylic on canvas, 40 - 40 cm" />
           <figcaption>
             <div class="art-name">Trendul</div>
@@ -192,7 +186,6 @@
       </div>
     </section>
 
-    <!-- SERIES 2 -->
     <section class="series series--two" id="series-2">
       <div class="series-hero">
         <img class="series-hero__img" src="imagini/collection/artist-studio.jpg" alt="Series 2 header" loading="lazy" />
@@ -219,7 +212,7 @@
 
       <div class="art-grid art-grid--single">
         <figure class="art-card art-card--single" data-lightbox-item>
-          <img src="imagini/collection/what-will-happen.png" alt="What will happen to me, will happen" loading="lazy"
+          <img src="imagini/collection/what-will-happen.png" alt="What will happen to me, will happen"
             data-lightbox-src="imagini/collection/what-will-happen.png"
             data-lightbox-caption="What will happen to me, will happen — Watercolor on paper, 38/56 cm" />
           <figcaption>
@@ -229,8 +222,8 @@
         </figure>
 
         <figure class="art-card art-card--single" data-lightbox-item>
-          <img src="imagini/collection/proiecte.png" alt="Proiecte" loading="lazy"
-            data-lightbox-src="imagini/collection/proiecte.png" data-lightbox-caption="Proiecte — Acrylic on canvas" />
+          <img src="imagini/collection/proiecte.png" alt="Proiecte" data-lightbox-src="imagini/collection/proiecte.png"
+            data-lightbox-caption="Proiecte — Acrylic on canvas" />
           <figcaption>
             <div class="art-name">Proiecte</div>
             <div class="art-meta">Acrylic on canvas</div>
@@ -238,7 +231,7 @@
         </figure>
 
         <figure class="art-card art-card--single" data-lightbox-item>
-          <img src="imagini/collection/umbre-in-atelier.png" alt="Umbre in atelier" loading="lazy"
+          <img src="imagini/collection/umbre-in-atelier.png" alt="Umbre in atelier"
             data-lightbox-src="imagini/collection/umbre-in-atelier.png"
             data-lightbox-caption="Umbre in atelier — Acrylic on canvas, 70/80 cm" />
           <figcaption>
@@ -248,8 +241,7 @@
         </figure>
 
         <figure class="art-card art-card--single" data-lightbox-item>
-          <img src="imagini/collection/breath.png" alt="Breath" loading="lazy"
-            data-lightbox-src="imagini/collection/breath.png"
+          <img src="imagini/collection/breath.png" alt="Breath" data-lightbox-src="imagini/collection/breath.png"
             data-lightbox-caption="Breath — Acrylic on canvas, 30/40 cm" />
           <figcaption>
             <div class="art-name">Breath</div>
@@ -260,7 +252,6 @@
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
   <section id="footer">
     <div class="footer container">
       <div class="brand">
@@ -269,16 +260,11 @@
 
       <div class="footer-welcome">
         <h3 class="footer-title">WELCOME!</h3>
-
-        <p class="footer-text">
-          Hi! Welcome to my world! I’m artist Xenia Botea.
-        </p>
-
+        <p class="footer-text">Hi! Welcome to my world! I’m artist Xenia Botea.</p>
         <p class="footer-text">
           Here you will find my original artworks, fine art prints and workshops. My art comes to life in many different
           ways. I hope you’ll enjoy your time here, and thank you for collecting.
         </p>
-
         <p class="footer-text">
           If you’d like to connect with me, feel free to drop me an email or follow me on social media. I’d love to hear
           from you!
@@ -313,10 +299,8 @@
     </div>
   </section>
 
-  <!-- LIGHTBOX -->
   <div class="lb" hidden data-lb>
     <div class="lb__backdrop" data-lb-close></div>
-
     <div class="lb__panel" role="dialog" aria-modal="true" aria-label="Artwork preview">
       <button class="lb__close" type="button" aria-label="Close" data-lb-close>×</button>
       <img class="lb__img" alt="" data-lb-img />
@@ -331,7 +315,6 @@
   <a href="https://wa.me/40758312756" target="_blank" rel="noopener" class="whatsapp-float">
     <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" />
   </a>
-
 </body>
 
 </html>

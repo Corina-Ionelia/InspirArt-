@@ -1,6 +1,3 @@
-/* ===============================
-   HELPERS
-================================ */
 const qs = (selector, parent = document) => parent.querySelector(selector);
 const qsa = (selector, parent = document) => [...parent.querySelectorAll(selector)];
 
@@ -8,7 +5,7 @@ const qsa = (selector, parent = document) => [...parent.querySelectorAll(selecto
    MOBILE MENU
 ================================ */
 const hamburger = qs(".hamburger");
-const navMenu = qs("#header .nav-list ul");
+const navMenu = qs("#header .nav-list > ul");
 
 if (hamburger && navMenu) {
     const toggleMenu = () => {
@@ -26,36 +23,77 @@ if (hamburger && navMenu) {
             toggleMenu();
         }
     });
-
-    qsa("#header .nav-list ul a").forEach((link) => {
-        link.addEventListener("click", () => {
-            navMenu.classList.remove("active");
-            hamburger.classList.remove("active");
-            hamburger.setAttribute("aria-expanded", "false");
-            document.body.classList.remove("menu-open");
-        });
-    });
-
-    document.addEventListener("click", (e) => {
-        const clickedInsideMenu = e.target.closest(".nav-list");
-        if (!clickedInsideMenu && navMenu.classList.contains("active")) {
-            navMenu.classList.remove("active");
-            hamburger.classList.remove("active");
-            hamburger.setAttribute("aria-expanded", "false");
-            document.body.classList.remove("menu-open");
-        }
-    });
 }
 
 /* ===============================
-   ACTIVE LINK
+   SUBMENUS
+================================ */
+const submenuParents = qsa(".has-submenu");
+
+submenuParents.forEach((parent) => {
+    const toggle = qs(".submenu-toggle", parent);
+
+    if (!toggle) return;
+
+    toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        submenuParents.forEach((item) => {
+            if (item !== parent) item.classList.remove("open");
+        });
+
+        parent.classList.toggle("open");
+        toggle.classList.toggle("is-active", parent.classList.contains("open"));
+    });
+});
+
+/* close menu on link click */
+qsa("#header a").forEach((link) => {
+    link.addEventListener("click", () => {
+        if (navMenu) navMenu.classList.remove("active");
+        if (hamburger) {
+            hamburger.classList.remove("active");
+            hamburger.setAttribute("aria-expanded", "false");
+        }
+        document.body.classList.remove("menu-open");
+        submenuParents.forEach((item) => item.classList.remove("open"));
+    });
+});
+
+/* click outside submenu */
+document.addEventListener("click", (e) => {
+    const insideNav = e.target.closest(".nav-list");
+    if (!insideNav) {
+        submenuParents.forEach((item) => item.classList.remove("open"));
+    }
+});
+
+/* ===============================
+   ACTIVE LINKS
 ================================ */
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const currentHash = window.location.hash || "";
 
-qsa("#header .nav-list ul a").forEach((link) => {
+qsa("#header a").forEach((link) => {
     const href = link.getAttribute("href");
-    if (href === currentPage) {
+    if (!href) return;
+
+    const [pagePart, hashPart] = href.split("#");
+
+    const samePage = pagePart === currentPage || (pagePart === "" && currentPage === "index.html");
+    const sameHash = hashPart ? `#${hashPart}` === currentHash : true;
+
+    if ((pagePart === currentPage && !hashPart) || (pagePart === currentPage && sameHash)) {
         link.classList.add("is-active");
+    }
+});
+
+/* mark parent submenu active if child active */
+submenuParents.forEach((parent) => {
+    const toggle = qs(".submenu-toggle", parent);
+    const activeChild = qs(".submenu a.is-active", parent);
+    if (toggle && activeChild) {
+        toggle.classList.add("is-active");
     }
 });
 
@@ -84,7 +122,6 @@ function openLightbox(index) {
     if (!lb || !lbItems.length) return;
 
     currentIndex = index;
-
     const img = lbItems[currentIndex];
     const src = img.dataset.lightboxSrc || img.src;
     const caption = img.dataset.lightboxCaption || img.alt || "";
@@ -98,7 +135,6 @@ function openLightbox(index) {
 
 function closeLightbox() {
     if (!lb) return;
-
     lb.hidden = true;
     lbImg.src = "";
     lbImg.alt = "";
@@ -122,10 +158,7 @@ lbItems.forEach((img, index) => {
     img.addEventListener("click", () => openLightbox(index));
 });
 
-lbCloseBtns.forEach((btn) => {
-    btn.addEventListener("click", closeLightbox);
-});
-
+lbCloseBtns.forEach((btn) => btn.addEventListener("click", closeLightbox));
 if (lbPrev) lbPrev.addEventListener("click", showPrev);
 if (lbNext) lbNext.addEventListener("click", showNext);
 
@@ -139,7 +172,6 @@ document.addEventListener("keydown", (e) => {
 
 /* ===============================
    NEWSLETTER POPUP
-   rulează doar dacă există pe pagină
 ================================ */
 const newsletterPopup = qs("#newsletter-popup");
 const newsletterClose = qs("#newsletter-popup .close-btn");
