@@ -181,18 +181,6 @@ body::after {
   -webkit-backdrop-filter: blur(6px);
 }
 
-#header .header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -12px;
-  width: 100%;
-  height: 12px;
-  pointer-events: none;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0));
-  opacity: 0.24;
-}
-
 #header .nav-bar {
   max-width: var(--container);
   min-height: var(--header-h);
@@ -258,6 +246,7 @@ body::after {
       transform 0.2s ease,
       box-shadow 0.2s ease;
     cursor: pointer;
+    appearance: none;
   }
 
   #header .nav-list > ul > li > a:hover,
@@ -277,11 +266,6 @@ body::after {
     background: linear-gradient(90deg, #ece5df, #f8f3ee);
     border-color: rgba(0, 0, 0, 0.07);
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
-  }
-
-  .submenu-toggle {
-    appearance: none;
-    font: inherit;
   }
 
   .has-submenu .submenu {
@@ -589,25 +573,6 @@ body::after {
 #hero .hero-v2 .hero-surname {
   color: #111;
   font-weight: 500;
-  position: relative;
-}
-
-#hero .hero-v2 .hero-surname::after {
-  content: "";
-  position: absolute;
-  left: -6%;
-  right: -6%;
-  bottom: -10px;
-  height: 10px;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 0, 0, 0.12),
-    transparent
-  );
-  transform: rotate(-2deg);
-  opacity: 1;
 }
 
 #hero .hero-v2 .hero-subtitle {
@@ -618,24 +583,6 @@ body::after {
   text-transform: uppercase;
   color: #0f0f0f;
   font-weight: 400;
-  position: relative;
-}
-
-#hero .hero-v2 .hero-subtitle::after {
-  content: "";
-  display: block;
-  width: 220px;
-  height: 12px;
-  margin: 14px auto 0;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 0, 0, 0.12),
-    transparent
-  );
-  transform: rotate(-2deg);
-  opacity: 0.9;
 }
 
 #hero .hero-v2 .hero-wave {
@@ -874,24 +821,6 @@ body::after {
   font-size: 6.8rem;
   line-height: 1;
   letter-spacing: 0.04em;
-  position: relative;
-}
-
-.big-title::after {
-  content: "";
-  display: block;
-  width: 220px;
-  height: 12px;
-  margin: 14px 0 0;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(201, 177, 138, 0.62),
-    transparent
-  );
-  transform: rotate(-2deg);
-  opacity: 0.65;
 }
 
 .section-title {
@@ -1424,7 +1353,7 @@ body::after {
 }
 
 /* =========================================================
-   COMBINED COURSES & WORKSHOPS PAGE
+   SIMPLE PAGES
 ========================================================= */
 .page-section,
 .simple-page,
@@ -1463,26 +1392,6 @@ body::after {
 
 .page-card p + p {
   margin-top: 14px;
-}
-
-.page-grid {
-  display: grid;
-  gap: 20px;
-}
-
-.page-grid--2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.page-grid--3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-@media (max-width: 900px) {
-  .page-grid--2,
-  .page-grid--3 {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* =========================================================
@@ -1791,10 +1700,11 @@ body::after {
   margin: 0 0 20px;
   font-size: 2.6rem;
   font-weight: 500;
+  color: #ffffff;
 }
 
 #footer .brand h1 span {
-  color: #f2d9b6;
+  color: #ffffff;
 }
 
 .footer-welcome {
@@ -1809,7 +1719,6 @@ body::after {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #fff;
-  position: relative;
 }
 
 .footer-text {
